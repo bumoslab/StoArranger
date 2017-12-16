@@ -1,0 +1,82 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+APP_MODULES	base/jni/Application.mk	/^APP_MODULES := base$/;"	m
+LOCAL_ARM_MODE	base/jni/Android.mk	/^LOCAL_ARM_MODE := arm$/;"	m
+LOCAL_CFLAGS	example/jni/Android.mk	/^LOCAL_CFLAGS := -g$/;"	m
+LOCAL_EXPORT_C_INCLUDES	example/jni/Android.mk	/^LOCAL_EXPORT_C_INCLUDES := ..\/..\/base$/;"	m
+LOCAL_MODULE	base/jni/Android.mk	/^LOCAL_MODULE    := base$/;"	m
+LOCAL_MODULE	example/jni/Android.mk	/^LOCAL_MODULE    := libexample$/;"	m
+LOCAL_MODULE	example/jni/Android.mk	/^LOCAL_MODULE := base$/;"	m
+LOCAL_PATH	base/jni/Android.mk	/^LOCAL_PATH := $(call my-dir)$/;"	m
+LOCAL_PATH	example/jni/Android.mk	/^LOCAL_PATH := $(call my-dir)$/;"	m
+LOCAL_SHARED_LIBRARIES	example/jni/Android.mk	/^LOCAL_SHARED_LIBRARIES := dl$/;"	m
+LOCAL_SRC_FILES	base/jni/Android.mk	/^LOCAL_SRC_FILES := ..\/util.c ..\/hook.c ..\/base.c$/;"	m
+LOCAL_SRC_FILES	example/jni/Android.mk	/^LOCAL_SRC_FILES := ..\/..\/base\/obj\/local\/armeabi\/libbase.a$/;"	m
+LOCAL_SRC_FILES	example/jni/Android.mk	/^LOCAL_SRC_FILES := ..\/epoll.c  ..\/epoll_arm.c.arm$/;"	m
+LOCAL_STATIC_LIBRARIES	example/jni/Android.mk	/^LOCAL_STATIC_LIBRARIES := base$/;"	m
+MAX_NAME_LEN	base/util.c	34;"	d	file:
+MEMORY_ONLY	base/util.c	35;"	d	file:
+_GNU_SOURCE	base/base.c	12;"	d	file:
+_GNU_SOURCE	base/hook.c	11;"	d	file:
+_GNU_SOURCE	example/epoll.c	12;"	d	file:
+_XOPEN_SOURCE	base/util.c	13;"	d	file:
+base_my_init	base/base.c	/^static void base_my_init(void)$/;"	f	file:
+counter	example/epoll.c	/^static int counter;$/;"	v	file:
+data	base/hook.h	/^	void *data;$/;"	m	struct:hook_t
+do_load	base/util.c	/^static int do_load(int fd, symtab_t symtab)$/;"	f	file:
+dyn	base/util.c	/^	struct symlist *dyn;   \/* dynamic symbols *\/$/;"	m	struct:symtab	typeref:struct:symtab::symlist	file:
+end	base/util.c	/^	unsigned long start, end;$/;"	m	struct:mm	file:
+eph	example/epoll.c	/^static struct hook_t eph;$/;"	v	typeref:struct:hook_t	file:
+find_libbase	base/util.c	/^int find_libbase(pid_t pid, char *libn, unsigned long *addr)$/;"	f
+find_libname	base/util.c	/^static int find_libname(char *libn, char *name, int len, unsigned long *start, struct mm *mm, int nmm)$/;"	f	file:
+find_name	base/util.c	/^int find_name(pid_t pid, char *name, char *libn, unsigned long *addr)$/;"	f
+get_syms	base/util.c	/^static struct symlist* get_syms(int fd, Elf32_Shdr *symh, Elf32_Shdr *strh)$/;"	f	file:
+hook	base/hook.c	/^int hook(struct hook_t *h, int pid, char *libname, char *funcname, void *hook_arm, void *hook_thumb)$/;"	f
+hook_cacheflush	base/hook.c	/^void inline hook_cacheflush(unsigned int begin, unsigned int end)$/;"	f
+hook_direct	base/hook.c	/^int hook_direct(struct hook_t *h, unsigned int addr, void *hookf)$/;"	f
+hook_postcall	base/hook.c	/^void hook_postcall(struct hook_t *h)$/;"	f
+hook_precall	base/hook.c	/^void hook_precall(struct hook_t *h)$/;"	f
+hook_t	base/hook.h	/^struct hook_t {$/;"	s
+jump	base/hook.h	/^	unsigned int jump[3];$/;"	m	struct:hook_t
+jumpt	base/hook.h	/^	unsigned char jumpt[20];$/;"	m	struct:hook_t
+load_memmap	base/util.c	/^static int load_memmap(pid_t pid, struct mm *mm, int *nmmp)$/;"	f	file:
+load_symtab	base/util.c	/^static symtab_t load_symtab(char *filename)$/;"	f	file:
+log	base/hook.h	13;"	d
+log	example/epoll.c	32;"	d	file:
+log	example/epoll.c	34;"	d	file:
+log_function	base/hook.h	/^void (*log_function)(char *logmsg);$/;"	v
+logfile	base/base.c	/^static char logfile[] = "\/data\/local\/tmp\/adbi.log";$/;"	v	file:
+logmsgtofile	base/base.c	/^static void logmsgtofile(char *msg)$/;"	f	file:
+logmsgtostdout	base/base.c	/^static void logmsgtostdout(char *msg)$/;"	f	file:
+lookup2	base/util.c	/^static int lookup2(struct symlist *sl, unsigned char type,$/;"	f	file:
+lookup_func_sym	base/util.c	/^static int lookup_func_sym(symtab_t s, char *name, unsigned long *val)$/;"	f	file:
+lookup_sym	base/util.c	/^static int lookup_sym(symtab_t s, unsigned char type,$/;"	f	file:
+mm	base/util.c	/^struct mm {$/;"	s	file:
+my_epoll_wait	example/epoll.c	/^int my_epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout)$/;"	f
+my_epoll_wait_arm	example/epoll_arm.c	/^int my_epoll_wait_arm(int epfd, struct epoll_event *events, int maxevents, int timeout)$/;"	f
+my_init	example/epoll.c	/^void my_init(void)$/;"	f
+my_log	example/epoll.c	/^static void my_log(char *msg)$/;"	f	file:
+my_pread	base/util.c	/^static int my_pread(int fd, void *buf, size_t count, off_t offset)$/;"	f	file:
+name	base/hook.h	/^	unsigned char name[128];$/;"	m	struct:hook_t
+name	base/util.c	/^	char name[MAX_NAME_LEN];$/;"	m	struct:mm	file:
+num	base/util.c	/^	unsigned num;         \/* number of symbols *\/$/;"	m	struct:symlist	file:
+orig	base/hook.h	/^	unsigned int orig;$/;"	m	struct:hook_t
+patch	base/hook.h	/^	unsigned int patch;$/;"	m	struct:hook_t
+set_logfunction	base/base.c	/^void* set_logfunction(void *func)$/;"	f
+st	base/util.c	/^	struct symlist *st;    \/* "static" symbols *\/$/;"	m	struct:symtab	typeref:struct:symtab::symlist	file:
+start	base/util.c	/^	unsigned long start, end;$/;"	m	struct:mm	file:
+start_coms	base/hook.c	/^int start_coms(int *coms, char *ptsn)$/;"	f
+store	base/hook.h	/^	unsigned int store[3];$/;"	m	struct:hook_t
+storet	base/hook.h	/^	unsigned char storet[20];$/;"	m	struct:hook_t
+str	base/util.c	/^	char *str;            \/* symbol strings *\/$/;"	m	struct:symlist	file:
+sym	base/util.c	/^	Elf32_Sym *sym;       \/* symbols *\/$/;"	m	struct:symlist	file:
+symlist	base/util.c	/^struct symlist {$/;"	s	file:
+symtab	base/util.c	/^struct symtab {$/;"	s	file:
+symtab_t	base/util.c	/^typedef struct symtab *symtab_t;$/;"	t	typeref:struct:symtab	file:
+thumb	base/hook.h	/^	unsigned char thumb;$/;"	m	struct:hook_t
+unhook	base/hook.c	/^void unhook(struct hook_t *h)$/;"	f
+xmalloc	base/util.c	/^static void* xmalloc(size_t size)$/;"	f	file:

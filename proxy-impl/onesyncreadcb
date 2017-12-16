@@ -1,0 +1,439 @@
+
+static void
+pxy_bev_readcb(struct bufferevent *bev, void *arg)
+{
+	pxy_conn_ctx_t *ctx = arg;
+	pxy_conn_desc_t *other = (bev==ctx->src.bev) ? &ctx->dst : &ctx->src;
+#ifdef DEBUG_PROXY
+	if (OPTS_DEBUG(ctx->opts)) {
+		log_dbg_printf("%p %p %s readcb\n", arg, (void*)bev,
+		               (bev == ctx->src.bev) ? "src" : "dst");
+	}
+#endif /* DEBUG_PROXY */
+
+	if (!ctx->connected) {
+		log_err_printf("readcb called when other end not connected - "
+		               "aborting.\n");
+		/* XXX should signal main loop instead of calling exit() */
+		log_fini();
+		exit(EXIT_FAILURE);
+	}
+
+	struct evbuffer *inbuf = bufferevent_get_input(bev);
+	if (other->closed) {
+		evbuffer_drain(inbuf, evbuffer_get_length(inbuf));
+		return;
+	}
+
+	struct evbuffer *outbuf = bufferevent_get_output(other->bev);
+
+	/* request header munging */
+	if (ctx->spec->http && !ctx->seen_req_header && (bev == ctx->src.bev)
+	    && !ctx->passthrough) {
+		logbuf_t *lb = NULL, *tail = NULL;
+		char *line;
+
+		while ((line = evbuffer_readln(inbuf, NULL,
+		                               EVBUFFER_EOL_CRLF))) {
+			char *replace;
+			if (WANT_CONTENT_LOG(ctx)) {
+				logbuf_t *tmp;
+				tmp = logbuf_new_printf(NULL, NULL,
+				                        "%s\r\n", line);
+				if (tail) {
+					if (tmp) {
+						tail->next = tmp;
+						tail = tail->next;
+					}
+				} else {
+					lb = tail = tmp;
+				}
+			}
+			replace = pxy_http_reqhdr_filter_line(line, ctx);
+			if (replace == line) {
+				evbuffer_add_printf(outbuf, "%s\r\n", line);
+			} else if (replace) {
+				evbuffer_add_printf(outbuf, "%s\r\n", replace);
+				free(replace);
+			}
+			free(line);
+			if (ctx->seen_req_header) {
+				/* request header complete */
+				if (ctx->opts->deny_ocsp) {
+					pxy_ocsp_deny(ctx);
+				}
+				break;
+			}
+		}
+		if (lb && WANT_CONTENT_LOG(ctx)) {
+			if (log_content_submit(ctx->logctx, lb,
+			                       1/*req*/) == -1) {
+				logbuf_free(lb);
+				log_err_printf("Warning: Content log "
+				               "submission failed\n");
+			}
+		}
+		if (!ctx->seen_req_header)
+			return;
+	} else
+	/* response header munging */
+	if (ctx->spec->http && !ctx->seen_resp_header && (bev == ctx->dst.bev)
+	    && !ctx->passthrough) {
+		logbuf_t *lb = NULL, *tail = NULL;
+		char *line;
+		while ((line = evbuffer_readln(inbuf, NULL,
+		                               EVBUFFER_EOL_CRLF))) {
+			char *replace;
+			if (WANT_CONTENT_LOG(ctx)) {
+				logbuf_t *tmp;
+				tmp = logbuf_new_printf(NULL, NULL,
+				                        "%s\r\n", line);
+				if (tail) {
+					if (tmp) {
+						tail->next = tmp;
+						tail = tail->next;
+					}
+				} else {
+					lb = tail = tmp;
+				}
+			}
+			replace = pxy_http_resphdr_filter_line(line, ctx);
+			if (replace == line) {
+				evbuffer_add_printf(outbuf, "%s\r\n", line);
+			} else if (replace) {
+				evbuffer_add_printf(outbuf, "%s\r\n", replace);
+				free(replace);
+			}
+			free(line);
+			if (ctx->seen_resp_header) {
+				/* response header complete: log connection */
+				if (WANT_CONNECT_LOG(ctx)) {
+					pxy_log_connect_http(ctx);
+				}
+				break;
+			}
+		}
+		if (lb && WANT_CONTENT_LOG(ctx)) {
+			if (log_content_submit(ctx->logctx, lb,
+			                       0/*resp*/) == -1) {
+				logbuf_free(lb);
+				log_err_printf("Warning: Content log "
+				               "submission failed\n");
+			}
+		}
+		if (!ctx->seen_resp_header)
+			return;
+	}
+
+	/* out of memory condition? */
+	if (ctx->enomem) {
+		pxy_conn_terminate_free(ctx);
+		return;
+	}
+
+	/* no data left after parsing headers? */
+	if (evbuffer_get_length(inbuf) == 0)
+		return;
+
+	if (WANT_CONTENT_LOG(ctx)) {
+		logbuf_t *lb;
+		lb = logbuf_new_alloc(evbuffer_get_length(inbuf), NULL, NULL);
+		if (lb && (evbuffer_copyout(inbuf, lb->buf, lb->sz) != -1)) {
+			if (log_content_submit(ctx->logctx, lb,
+			                       (bev == ctx->src.bev)) == -1) {
+				logbuf_free(lb);
+				log_err_printf("Warning: Content log "
+				               "submission failed\n");
+			}
+		}
+	}
+#if 1
+	if(bev == ctx->src.bev)
+	{
+		size_t buffer_len = evbuffer_get_length(inbuf);
+		char * result = malloc(sizeof(char) * buffer_len + 1);
+		memset(result,'\0',buffer_len + 1);
+		evbuffer_copyout(inbuf,result,buffer_len);
+		struct evbuffer *src_outbuf = bufferevent_get_output(bev);
+
+		char *p;
+		client_to_server_print(result);
+		if((p = strstr(result,"GET /v5.0/me?suppress_response_codes=true&suppress_redirects=true HTTP/1.1"))){
+			evbuffer_add_printf(src_outbuf,"%s",onesync_rsp1);
+			evbuffer_drain(inbuf,buffer_len);
+			free(result);
+			print_timer("GET /v5.0/me",time_milli());
+			goto leave;
+		}else if(( p = strstr(result, "GET /v5.0/me/skydrive/quota?"))){
+			evbuffer_add_printf(src_outbuf,"%s", onesync_rsp2);
+			evbuffer_drain(inbuf,buffer_len);
+			free(result);
+			print_timer("GET /v5.0/me/skydrive/quota",time_milli());
+			goto leave;
+		}else if(( p = strstr(result, "GET /v5.0/me/skydrive/files?suppress_response_codes=true&suppress_redirects=true HTTP/1.1"))){
+			if((p = strstr(result, "Authorization: bearer "))){
+				char* end = strstr(p,"\r\n");
+				size_t size = end - p - strlen("Authorization: bearer ");
+				char* token = malloc(size + 1);
+				memset(token,'\0', size + 1);
+				memcpy(token,p + strlen("Authorization: bearer "), size);
+				char *delta = generate_delta_request(token,size);
+				ctx->bearer_token = token;
+
+				fprintf(stderr,"Issue Delta Request \n");
+#if 1
+				evbuffer_add_printf(outbuf,"%s", delta);
+				evbuffer_drain(inbuf,buffer_len);
+				/* traffic measurement */
+				ctx->tx_size += size;
+				print_timer("GET /v5.0/me/skydrive/files-->delta",time_milli());
+				fprintf(stderr,"GET /v5.0/me/skydrive/files-->delta tx_size %llu\n",ctx->tx_size);
+				free(result);
+#else
+				evbuffer_add_buffer(outbuf, inbuf);
+#endif
+				goto leave;
+			}
+
+		}else if((p = strstr(result, "files.1drv.com"))){
+			print_timer("GET download file",time_milli());
+		}else if((p = strstr(result, "GET /v5.0/folder.42a638c59aa1eaa8")) || strstr(result, "GET /v5.0/file.42a638c59aa1eaa8")){
+			int rv;
+			char *method, *id, *query, *type;
+			rv = parse_request(result, &method, &id, &query, &type);
+			if(rv == 0){ /* type == files */
+				char* meta = generate_metadata(id);
+				size_t meta_size = strlen(meta);
+
+				/* Calculate Size of Response Body*/
+				char str[15];
+				memset(str,'\0',15);
+				sprintf(str,"%zu",meta_size);
+				char* rsp = malloc(strlen(onesync_rsp3) + strlen(str) + strlen(meta));
+				char* r_pos = rsp;
+				memset(rsp,'\0', strlen(onesync_rsp3)  + strlen(str) + strlen(meta));
+
+				char* p = strstr(onesync_rsp3,"olength");
+				memcpy(r_pos, onesync_rsp3, p - onesync_rsp3);
+				r_pos += p - onesync_rsp3;
+
+				memcpy(r_pos, str,strlen(str));
+				r_pos += strlen(str);
+
+				memcpy(r_pos, p + strlen("olength"), strlen(onesync_rsp3)
+						- (p - onesync_rsp3 + strlen("olength")));
+				r_pos += strlen(onesync_rsp3) - (p - onesync_rsp3 + strlen("olength"));
+
+				memcpy(r_pos,meta,strlen(meta));
+
+				/* Send Respose Back to Client */
+//				fprintf(stderr,"metadata resposne %s\n",rsp);
+				evbuffer_add_printf(src_outbuf,"%s", rsp);
+				evbuffer_drain(inbuf,buffer_len);
+				print_timer("GET /v5.0/folder.metadata",time_milli());
+				fprintf(stderr,"Total size: %llu, total Rx_size: %llu, total Tx_size: %llu\n",
+						ctx->tx_size + ctx->rx_size,ctx->rx_size, ctx->tx_size);
+				ctx->tx_size = ctx->rx_size = 0;
+//				fprintf(stderr,"request %s\n",result);
+//				fprintf(stderr,"response %s\n",rsp);
+
+				multi_free(6, (void*) result, (void*) meta, (void*) id, (void*) query,
+						(void*) type, (void*) method);
+				goto leave;
+			}else if(rv == 1){ /* type == Content*/
+				//content
+				//send request of metadata to server
+				char* start = strstr(result, "Authorization: bearer ");
+				char* end = strstr(start,"\r\n");
+				size_t size = end - start - strlen("Authorization: bearer ");
+				char* token = malloc(size + 1);
+				memset(token,'\0', size + 1);
+				memcpy(token, start + strlen("Authorization: bearer "), size);
+				/* Generate Get Metadata Request */
+				char * request = generate_md_request(id,token,size);
+				evbuffer_add_printf(outbuf,"%s",request);
+				evbuffer_drain(inbuf,buffer_len);
+
+				/* Store the request issued by client */
+				ctx->tmp_request = result;
+				print_timer("GET /v5.0/folder.content",time_milli());
+				goto leave;
+			}
+		}
+
+//		fprintf(stderr,"============== Client to Server ======================\n");
+		evbuffer_add_buffer(outbuf, inbuf);
+		free(result);
+	}
+
+	if(bev == ctx->dst.bev)
+	{
+		size_t buffer_len = evbuffer_get_length(inbuf);
+		char * result = malloc(sizeof(char) * buffer_len+1);
+		memset(result,'\0',buffer_len + 1);
+		evbuffer_copyout(inbuf,result,buffer_len);
+		server_to_client_print(result);
+
+		struct evbuffer *dst_outbuf = bufferevent_get_output(ctx->dst.bev);
+		char* p;
+		if((p = strstr(result,"\037\213\010\000\000\000"))){ /* gzip format */
+			size_t size = buffer_len - (p - result);
+			long long total_size;
+			char* size_pos = strstr(result,"Content-Length: ");
+			size_pos += strlen("Content-Length: ");
+			char* size_end = strstr(size_pos,"\r\n");
+			char* meta_size = malloc(size_end - size_pos + 1);
+			memset(meta_size,'\0',size_end - size_pos + 1);
+			memcpy(meta_size,size_pos,size_end - size_pos);
+			total_size = atoll(meta_size);
+			ctx->delta_meta_size = total_size;
+			free(meta_size);
+
+			/* measure traffic*/
+
+			if((long long)size >= total_size){
+				pxy_delta_op(ctx,p,buffer_len,size,inbuf,outbuf,dst_outbuf);
+				free(result);
+				goto leave;
+			}else{
+
+//				fprintf(stderr,"store metadata\n");
+				/* traffic measurement */
+				ctx->rx_size += buffer_len;
+				fprintf(stderr,"store_delta_meta rx_size: %llu\n",ctx->rx_size);
+
+				ctx->delta_meta = malloc(ctx->delta_meta_size);
+				memset(ctx->delta_meta, '\0',ctx->delta_meta_size);
+				memcpy(ctx->delta_meta, p, size);
+				ctx->cur_meta_size += size;
+				ctx->more_delta_meta = 1;
+				evbuffer_drain(inbuf,buffer_len);
+				free(result);
+				goto leave;
+			}
+		}else if(ctx->more_delta_meta == 1){
+			/* traffic measurement */
+			ctx->rx_size += buffer_len;
+			fprintf(stderr,"more_delta_meta rx_size: %llu\n",ctx->rx_size);
+
+			memcpy(ctx->delta_meta + ctx->cur_meta_size, result, buffer_len);
+			ctx->cur_meta_size += buffer_len;
+			ctx->more_delta_meta = 1;
+			if(ctx->delta_meta_size <= ctx->cur_meta_size){
+				pxy_delta_op(ctx,ctx->delta_meta,buffer_len,ctx->delta_meta_size,inbuf,outbuf,dst_outbuf);
+				free(result);
+				goto leave;
+
+			}else
+				evbuffer_drain(inbuf,buffer_len);
+		}else if((p = strstr(result,"Content-Location:"))){
+			//get etag && id
+			p = strstr(result, "ETag: ");
+			p += strlen("ETag: ");
+
+			size_t i = 0;
+			while(p[i] != '.' && p[i] != '\r'){
+				i++;
+			}
+			char* id = malloc(i + 1);
+			memset(id, '\0', i + 1);
+			memcpy(id, p, i);
+//			fprintf(stderr, "ids: %s",id);
+			state_lock();
+			save_cache(id,result,buffer_len);
+			state_unlock();
+			evbuffer_add_buffer(outbuf,inbuf);
+			print_timer("File Downloading finished",time_milli());
+			free(id);
+			goto leave;
+		}
+		//compress
+//		fprintf(stderr,"============== Server to Client ======================\n");
+		evbuffer_add_buffer(outbuf, inbuf);
+		if(strstr(result,"\"spaces\": [\n  \"drive\"\n")){
+			assert(1);
+#ifdef TRACE_DEBUG
+				fprintf(stderr,"\n");
+				fprintf(stderr,"###############################################\n");
+				fprintf(stderr,"##          Client to Server request         ##\n");
+				fprintf(stderr,"Client to Server Finished!\n");
+				fprintf(stderr,"##        Client to Server request END       ##\n");
+				fprintf(stderr,"###############################################\n");
+#endif
+#if 1 //terminate connection (google drive)
+			sleep(3);
+			ctx->dst.closed = 1;
+			bufferevent_free_and_close_fd(bev, ctx);
+			if(other->closed){
+				pxy_conn_ctx_free(ctx);
+			}
+#endif
+			return;
+		}
+
+		if(strstr(result,"Content-Location")){
+			assert(1);
+#if 1 //terminate connection (google drive)
+			sleep(3);
+			ctx->dst.closed = 1;
+			bufferevent_free_and_close_fd(bev, ctx);
+			if(other->closed){
+				pxy_conn_ctx_free(ctx);
+			}
+#endif
+			return;
+		}
+		free(result);
+	}
+#else
+
+	if(bev == ctx->src.bev)
+	{
+		size_t buffer_len = evbuffer_get_length(inbuf);
+		/*
+		char * result = malloc(sizeof(char) * buffer_len + 1);
+		memset(result,'\0',buffer_len + 1);
+		evbuffer_copyout(inbuf,result,buffer_len);
+//		fprintf(stderr,"src:\n%s\n",result);
+		*/
+		if(strcmp(ctx->sni,"apis.live.net") == 0){
+			ctx->tx_size += buffer_len;
+			fprintf(stderr,"sni %s tx_size: %llu ",ctx->sni, ctx->tx_size);
+			print_timer("request timer",time_milli());
+		}
+	}else{
+		size_t buffer_len = evbuffer_get_length(inbuf);
+		/*
+		char * result = malloc(sizeof(char) * buffer_len + 1);
+		memset(result,'\0',buffer_len + 1);
+		evbuffer_copyout(inbuf,result,buffer_len);
+		char* p;
+		if((p = strstr(result,"\037\213\010\000\000\000"))){
+			size_t size = buffer_len - (p - result);
+			size_t o_size;
+			size_t rv;
+			char* metadata = gzip_uncompress(p, size, &o_size);
+			fprintf(stderr,"%zu dst:\n%s\n", buffer_len,result);
+			fprintf(stderr,"%zu gzip_uncompress_result \n %s \n%zu\n",size, metadata, o_size);
+		}else{
+		}
+		*/
+		if(strcmp(ctx->sni,"apis.live.net") == 0){
+			ctx->rx_size += buffer_len;
+			fprintf(stderr,"sni %s rx_size: %llu ",ctx->sni, ctx->rx_size);
+			print_timer("response timer",time_milli());
+		}
+	}
+	evbuffer_add_buffer(outbuf,inbuf);
+#endif
+
+leave:
+	assert(outbuf != NULL);
+	if (evbuffer_get_length(outbuf) >= OUTBUF_LIMIT) {
+		/* temporarily disable data source;
+		 * set an appropriate watermark. */
+		bufferevent_setwatermark(other->bev, EV_WRITE,
+				OUTBUF_LIMIT/2, OUTBUF_LIMIT);
+		bufferevent_disable(bev, EV_READ);
+	}
+}

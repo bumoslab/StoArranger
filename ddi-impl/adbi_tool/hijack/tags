@@ -1,0 +1,70 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARM_ORIG_r0	hijack.c	598;"	d	file:
+ARM_cpsr	hijack.c	581;"	d	file:
+ARM_fp	hijack.c	586;"	d	file:
+ARM_ip	hijack.c	585;"	d	file:
+ARM_lr	hijack.c	583;"	d	file:
+ARM_pc	hijack.c	582;"	d	file:
+ARM_r0	hijack.c	597;"	d	file:
+ARM_r1	hijack.c	596;"	d	file:
+ARM_r10	hijack.c	587;"	d	file:
+ARM_r2	hijack.c	595;"	d	file:
+ARM_r3	hijack.c	594;"	d	file:
+ARM_r4	hijack.c	593;"	d	file:
+ARM_r5	hijack.c	592;"	d	file:
+ARM_r6	hijack.c	591;"	d	file:
+ARM_r7	hijack.c	590;"	d	file:
+ARM_r8	hijack.c	589;"	d	file:
+ARM_r9	hijack.c	588;"	d	file:
+ARM_sp	hijack.c	584;"	d	file:
+HELPSTR	hijack.c	600;"	d	file:
+LOCAL_ARM_MODE	jni/Android.mk	/^LOCAL_ARM_MODE := arm$/;"	m
+LOCAL_CFLAGS	jni/Android.mk	/^LOCAL_CFLAGS := -g$/;"	m
+LOCAL_MODULE	jni/Android.mk	/^LOCAL_MODULE    := hijack $/;"	m
+LOCAL_PATH	jni/Android.mk	/^LOCAL_PATH := $(call my-dir)$/;"	m
+LOCAL_SRC_FILES	jni/Android.mk	/^LOCAL_SRC_FILES := ..\/hijack.c $/;"	m
+MAX_NAME_LEN	hijack.c	41;"	d	file:
+MEMORY_ONLY	hijack.c	42;"	d	file:
+_GNU_SOURCE	hijack.c	18;"	d	file:
+_XOPEN_SOURCE	hijack.c	17;"	d	file:
+debug	hijack.c	/^int debug = 0;$/;"	v
+do_load	hijack.c	/^do_load(int fd, symtab_t symtab)$/;"	f	file:
+dyn	hijack.c	/^	struct symlist *dyn;   \/* dynamic symbols *\/$/;"	m	struct:symtab	typeref:struct:symtab::symlist	file:
+end	hijack.c	/^	unsigned long start, end;$/;"	m	struct:mm	file:
+find_libc	hijack.c	/^find_libc(char *name, int len, unsigned long *start,$/;"	f	file:
+find_linker	hijack.c	/^static int find_linker(pid_t pid, unsigned long *addr)$/;"	f	file:
+find_linker_mem	hijack.c	/^find_linker_mem(char *name, int len, unsigned long *start,$/;"	f	file:
+find_name	hijack.c	/^find_name(pid_t pid, char *name, unsigned long *addr)$/;"	f	file:
+get_syms	hijack.c	/^get_syms(int fd, Elf32_Shdr *symh, Elf32_Shdr *strh)$/;"	f	file:
+load_memmap	hijack.c	/^load_memmap(pid_t pid, struct mm *mm, int *nmmp)$/;"	f	file:
+load_symtab	hijack.c	/^load_symtab(char *filename)$/;"	f	file:
+lookup2	hijack.c	/^lookup2(struct symlist *sl, unsigned char type,$/;"	f	file:
+lookup_func_sym	hijack.c	/^lookup_func_sym(symtab_t s, char *name, unsigned long *val)$/;"	f	file:
+lookup_sym	hijack.c	/^lookup_sym(symtab_t s, unsigned char type,$/;"	f	file:
+main	hijack.c	/^int main(int argc, char *argv[])$/;"	f
+mm	hijack.c	/^struct mm {$/;"	s	file:
+name	hijack.c	/^	char name[MAX_NAME_LEN];$/;"	m	struct:mm	file:
+nomprotect	hijack.c	/^int nomprotect = 0;$/;"	v
+num	hijack.c	/^	unsigned num;         \/* number of symbols *\/$/;"	m	struct:symlist	file:
+pt_regs2	hijack.c	/^struct pt_regs2 {$/;"	s	file:
+read_mem	hijack.c	/^read_mem(pid_t pid, unsigned long *buf, int nlong, unsigned long pos)$/;"	f	file:
+sc	hijack.c	/^unsigned int sc[] = {$/;"	v
+sc_old	hijack.c	/^unsigned int sc_old[] = {$/;"	v
+st	hijack.c	/^	struct symlist *st;    \/* "static" symbols *\/$/;"	m	struct:symtab	typeref:struct:symtab::symlist	file:
+stack_end	hijack.c	/^unsigned int stack_end;$/;"	v
+stack_start	hijack.c	/^unsigned int stack_start;$/;"	v
+start	hijack.c	/^	unsigned long start, end;$/;"	m	struct:mm	file:
+str	hijack.c	/^	char *str;            \/* symbol strings *\/$/;"	m	struct:symlist	file:
+sym	hijack.c	/^	Elf32_Sym *sym;       \/* symbols *\/$/;"	m	struct:symlist	file:
+symlist	hijack.c	/^struct symlist {$/;"	s	file:
+symtab	hijack.c	/^struct symtab {$/;"	s	file:
+symtab_t	hijack.c	/^typedef struct symtab *symtab_t;$/;"	t	typeref:struct:symtab	file:
+uregs	hijack.c	/^         long uregs[18];$/;"	m	struct:pt_regs2	file:
+write_mem	hijack.c	/^write_mem(pid_t pid, unsigned long *buf, int nlong, unsigned long pos)$/;"	f	file:
+xmalloc	hijack.c	/^xmalloc(size_t size)$/;"	f	file:
+zygote	hijack.c	/^int zygote = 0;$/;"	v

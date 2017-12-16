@@ -1,0 +1,681 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AssertionControl	Globals.h	/^struct AssertionControl {$/;"	s
+CLOSESESSION	helper.h	/^    CLOSESESSION$/;"	e	enum:UPLOADMODEL
+CREATESESSION	helper.h	/^    CREATESESSION = 1,$/;"	e	enum:UPLOADMODEL
+CREATESESSION_FINISH	helper.h	/^    CREATESESSION_FINISH,$/;"	e	enum:UPLOADMODEL
+CREATESESSION_START	helper.h	/^    CREATESESSION_START,$/;"	e	enum:UPLOADMODEL
+DALVIK_GLOBALS_H_	Globals.h	30;"	d
+DEFAULT_CODE_CACHE_SIZE	Globals.h	745;"	d
+DvmGlobals	Globals.h	/^struct DvmGlobals {$/;"	s
+DvmJitGlobals	Globals.h	/^struct DvmJitGlobals {$/;"	s
+DvmJniGlobals	Globals.h	/^struct DvmJniGlobals {$/;"	s
+ETAG_SAMPLE0	format.h	/^    const char *ETAG_SAMPLE0 = "amKkzAMv_fUBF0Cxt1a1WaLm5Nk\/MTQ0ODQxOTAyMjk2OA";$/;"	v
+ETAG_SAMPLE1	format.h	/^    const char *ETAG_SAMPLE1 = "jbXGz7mn3P-4yQwb7qfM1aCupRQ\/DCj0BKZcVfA5aZfqhyCuK-E-nd4";$/;"	v
+FRAGMENT	helper.h	/^    FRAGMENT,$/;"	e	enum:UPLOADMODEL
+FRAGMENT_CONT	helper.h	/^    FRAGMENT_CONT,$/;"	e	enum:UPLOADMODEL
+FRAGMENT_FINISH	helper.h	/^    FRAGMENT_FINISH,$/;"	e	enum:UPLOADMODEL
+FRAGMENT_START	helper.h	/^    FRAGMENT_START,$/;"	e	enum:UPLOADMODEL
+GLOBAL_CONTEXT_SIZE	helper.c	29;"	d	file:
+GOOGLE_DR_ETAG_PREFIX_SIZE	format.h	139;"	d
+GOOGLE_DR_ETAG_SIZE0	format.h	137;"	d
+GOOGLE_DR_ETAG_SIZE1	format.h	138;"	d
+GOOGLE_DR_ID_SIZE	format.h	135;"	d
+GOOGLE_DR_UPLOADER_ID_SIZE	format.h	136;"	d
+ITEM_NUM	state.h	4;"	d
+JSMN_ARRAY	jsmn.h	/^	JSMN_ARRAY = 2,$/;"	e	enum:__anon1
+JSMN_ERROR_INVAL	jsmn.h	/^	JSMN_ERROR_INVAL = -2,$/;"	e	enum:jsmnerr
+JSMN_ERROR_NOMEM	jsmn.h	/^	JSMN_ERROR_NOMEM = -1,$/;"	e	enum:jsmnerr
+JSMN_ERROR_PART	jsmn.h	/^	JSMN_ERROR_PART = -3$/;"	e	enum:jsmnerr
+JSMN_OBJECT	jsmn.h	/^	JSMN_OBJECT = 1,$/;"	e	enum:__anon1
+JSMN_PARENT_LINKS	jsmn.h	5;"	d
+JSMN_PRIMITIVE	jsmn.h	/^	JSMN_PRIMITIVE = 4$/;"	e	enum:__anon1
+JSMN_STRING	jsmn.h	/^	JSMN_STRING = 3,$/;"	e	enum:__anon1
+JSMN_UNDEFINED	jsmn.h	/^	JSMN_UNDEFINED = 0,$/;"	e	enum:__anon1
+LOCAL_CFLAGS	Android.mk	/^LOCAL_CFLAGS    := -g$/;"	m
+LOCAL_C_INCLUDES	Android.mk	/^LOCAL_C_INCLUDES := ..\/..\/..\/..\/adbi\/instruments\/base\/ ..\/..\/..\/dalvikhook\/jni\/$/;"	m
+LOCAL_LDLIBS	Android.mk	/^LOCAL_LDLIBS    :=  -ldl -lz -Wl,--start-group ..\/..\/..\/..\/adbi\/instruments\/base\/obj\/local\/armeabi\/libbase.a ..\/..\/..\/dalvikhook\/obj\/local\/armeabi\/libdalvikhook.a -Wl,--end-group$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE    := liburl$/;"	m
+LOCAL_PATH	Android.mk	/^LOCAL_PATH := $(call my-dir)$/;"	m
+LOCAL_SRC_FILES	Android.mk	/^LOCAL_SRC_FILES := urlmon_arm.c.arm urlmon.c helper.c helpfnc.c jsmn.c state.c$/;"	m
+META_FILE	state.h	/^    META_FILE = 1$/;"	e	enum:__anon4
+META_FOLDER	state.h	/^    META_FOLDER = 0,$/;"	e	enum:__anon4
+NoChainExits	Globals.h	/^enum NoChainExits {$/;"	g
+ProfilerClockSource	Globals.h	/^enum ProfilerClockSource {$/;"	g
+RegisterMapMode	Globals.h	/^enum RegisterMapMode {$/;"	g
+SERVERID_FORMAT	format.h	/^    const char * SERVERID_FORMAT = "X-MSNSERVER: ";$/;"	v
+SESSIONID_FORMAT	format.h	/^    const char * SESSIONID_FORMAT = "BITS-Session-Id: ";$/;"	v
+SESSIONID_SIZE	format.h	5;"	d
+TraceProfilingModes	Globals.h	/^enum TraceProfilingModes {$/;"	g
+UNKNOWN	helper.h	/^    UNKNOWN = -1,$/;"	e	enum:UPLOADMODEL
+UPLOADMODEL	helper.h	/^enum UPLOADMODEL{$/;"	g
+_GNU_SOURCE	urlmon.c	11;"	d	file:
+__FORMAT_H_	format.h	2;"	d
+__HELPER__H__	helper.h	20;"	d
+__HELPFNC__	helpfnc.h	2;"	d
+__JSMN_H_	jsmn.h	2;"	d
+__LOG_H__	log.h	20;"	d
+__STATE__	state.h	2;"	d
+_threadSuspendLock	Globals.h	/^    pthread_mutex_t _threadSuspendLock;$/;"	m	struct:DvmGlobals
+abortHook	Globals.h	/^    void        (*abortHook)(void);$/;"	m	struct:DvmGlobals
+activeProfilers	Globals.h	/^    volatile int activeProfilers;$/;"	m	struct:DvmGlobals
+addrLookupsFound	Globals.h	/^    int                addrLookupsFound;$/;"	m	struct:DvmJitGlobals
+addrLookupsNotFound	Globals.h	/^    int                addrLookupsNotFound;$/;"	m	struct:DvmJitGlobals
+allocProf	Globals.h	/^    AllocProfState allocProf;$/;"	m	struct:DvmGlobals
+allocRecordCount	Globals.h	/^    int             allocRecordCount;       \/* #of valid entries *\/$/;"	m	struct:DvmGlobals
+allocRecordHead	Globals.h	/^    int             allocRecordHead;        \/* most-recently-added entry *\/$/;"	m	struct:DvmGlobals
+allocRecordMax	Globals.h	/^    int             allocRecordMax;         \/* Number of allocated entries. *\/$/;"	m	struct:DvmGlobals
+allocRecords	Globals.h	/^    AllocRecord*    allocRecords;$/;"	m	struct:DvmGlobals
+allocTrackerLock	Globals.h	/^    pthread_mutex_t allocTrackerLock;$/;"	m	struct:DvmGlobals
+alreadyEnabledViaFramework	Globals.h	/^    bool alreadyEnabledViaFramework;$/;"	m	struct:DvmJitGlobals
+analyze_delta_response	state.c	/^int analyze_delta_response(char* response, char** id, char** lasttime,char **next_token,$/;"	f
+assertionCtrl	Globals.h	/^    AssertionControl*   assertionCtrl;$/;"	m	struct:DvmGlobals
+assertionCtrlCount	Globals.h	/^    int         assertionCtrlCount;$/;"	m	struct:DvmGlobals
+biasedCardTableBase	Globals.h	/^    u1*         biasedCardTableBase;$/;"	m	struct:DvmGlobals
+blockingMode	Globals.h	/^    bool               blockingMode;$/;"	m	struct:DvmJitGlobals
+body_size	state.h	/^    size_t body_size;$/;"	m	struct:item
+bootClassPath	Globals.h	/^    ClassPathEntry* bootClassPath;$/;"	m	struct:DvmGlobals
+bootClassPathOptExtra	Globals.h	/^    DvmDex*     bootClassPathOptExtra;$/;"	m	struct:DvmGlobals
+bootClassPathStr	Globals.h	/^    char*       bootClassPathStr;$/;"	m	struct:DvmGlobals
+breakpointSet	Globals.h	/^    BreakpointSet*  breakpointSet;$/;"	m	struct:DvmGlobals
+bytes_send	helper.h	/^    int bytes_send;$/;"	m	struct:stt_response
+cache	state.h	/^    char* cache;$/;"	m	struct:item
+cacheVersion	Globals.h	/^    int cacheVersion;$/;"	m	struct:DvmJitGlobals
+cache_size	state.h	/^    size_t cache_size;$/;"	m	struct:item
+checkCallGraph	Globals.h	/^    bool checkCallGraph;$/;"	m	struct:DvmJitGlobals
+check_filelocation	state.c	/^struct item * check_filelocation(char* fl)$/;"	f
+check_metadata	state.c	/^struct item * check_metadata(char* id, char* lasttime)$/;"	f
+check_upload_model	helper.c	/^int check_upload_model(const char* hostname, int local_port)$/;"	f
+chunked_decode	helpfnc.c	/^char* chunked_decode(char* data,size_t len,size_t* o_size)$/;"	f
+chunked_encode	helpfnc.c	/^chunked_encode(char* data, size_t len, size_t* o_size)$/;"	f
+classArrayBoolean	Globals.h	/^    ClassObject* classArrayBoolean;$/;"	m	struct:DvmGlobals
+classArrayByte	Globals.h	/^    ClassObject* classArrayByte;$/;"	m	struct:DvmGlobals
+classArrayChar	Globals.h	/^    ClassObject* classArrayChar;$/;"	m	struct:DvmGlobals
+classArrayDouble	Globals.h	/^    ClassObject* classArrayDouble;$/;"	m	struct:DvmGlobals
+classArrayFloat	Globals.h	/^    ClassObject* classArrayFloat;$/;"	m	struct:DvmGlobals
+classArrayInt	Globals.h	/^    ClassObject* classArrayInt;$/;"	m	struct:DvmGlobals
+classArrayLong	Globals.h	/^    ClassObject* classArrayLong;$/;"	m	struct:DvmGlobals
+classArrayShort	Globals.h	/^    ClassObject* classArrayShort;$/;"	m	struct:DvmGlobals
+classJavaLangAnnotationAnnotationArray	Globals.h	/^    ClassObject* classJavaLangAnnotationAnnotationArray;$/;"	m	struct:DvmGlobals
+classJavaLangAnnotationAnnotationArrayArray	Globals.h	/^    ClassObject* classJavaLangAnnotationAnnotationArrayArray;$/;"	m	struct:DvmGlobals
+classJavaLangClass	Globals.h	/^    ClassObject* classJavaLangClass;$/;"	m	struct:DvmGlobals
+classJavaLangClassArray	Globals.h	/^    ClassObject* classJavaLangClassArray;$/;"	m	struct:DvmGlobals
+classJavaLangClassLoader	Globals.h	/^    ClassObject* classJavaLangClassLoader;$/;"	m	struct:DvmGlobals
+classJavaLangObject	Globals.h	/^    ClassObject* classJavaLangObject;$/;"	m	struct:DvmGlobals
+classJavaLangObjectArray	Globals.h	/^    ClassObject* classJavaLangObjectArray;$/;"	m	struct:DvmGlobals
+classJavaLangRefFinalizerReference	Globals.h	/^    ClassObject* classJavaLangRefFinalizerReference;$/;"	m	struct:DvmGlobals
+classJavaLangReflectAccessibleObject	Globals.h	/^    ClassObject* classJavaLangReflectAccessibleObject;$/;"	m	struct:DvmGlobals
+classJavaLangReflectConstructor	Globals.h	/^    ClassObject* classJavaLangReflectConstructor;$/;"	m	struct:DvmGlobals
+classJavaLangReflectConstructorArray	Globals.h	/^    ClassObject* classJavaLangReflectConstructorArray;$/;"	m	struct:DvmGlobals
+classJavaLangReflectField	Globals.h	/^    ClassObject* classJavaLangReflectField;$/;"	m	struct:DvmGlobals
+classJavaLangReflectFieldArray	Globals.h	/^    ClassObject* classJavaLangReflectFieldArray;$/;"	m	struct:DvmGlobals
+classJavaLangReflectMethod	Globals.h	/^    ClassObject* classJavaLangReflectMethod;$/;"	m	struct:DvmGlobals
+classJavaLangReflectMethodArray	Globals.h	/^    ClassObject* classJavaLangReflectMethodArray;$/;"	m	struct:DvmGlobals
+classJavaLangReflectProxy	Globals.h	/^    ClassObject* classJavaLangReflectProxy;$/;"	m	struct:DvmGlobals
+classJavaLangStackTraceElement	Globals.h	/^    ClassObject* classJavaLangStackTraceElement;$/;"	m	struct:DvmGlobals
+classJavaLangStackTraceElementArray	Globals.h	/^    ClassObject* classJavaLangStackTraceElementArray;$/;"	m	struct:DvmGlobals
+classJavaLangString	Globals.h	/^    ClassObject* classJavaLangString;$/;"	m	struct:DvmGlobals
+classJavaLangSystem	Globals.h	/^    ClassObject* classJavaLangSystem;$/;"	m	struct:DvmGlobals
+classJavaLangThread	Globals.h	/^    ClassObject* classJavaLangThread;$/;"	m	struct:DvmGlobals
+classJavaLangThreadGroup	Globals.h	/^    ClassObject* classJavaLangThreadGroup;$/;"	m	struct:DvmGlobals
+classJavaLangVMThread	Globals.h	/^    ClassObject* classJavaLangVMThread;$/;"	m	struct:DvmGlobals
+classJavaNioDirectByteBuffer	Globals.h	/^    ClassObject* classJavaNioDirectByteBuffer;$/;"	m	struct:DvmGlobals
+classLibcoreReflectAnnotationFactory	Globals.h	/^    ClassObject* classLibcoreReflectAnnotationFactory;$/;"	m	struct:DvmGlobals
+classLibcoreReflectAnnotationMember	Globals.h	/^    ClassObject* classLibcoreReflectAnnotationMember;$/;"	m	struct:DvmGlobals
+classLibcoreReflectAnnotationMemberArray	Globals.h	/^    ClassObject* classLibcoreReflectAnnotationMemberArray;$/;"	m	struct:DvmGlobals
+classOrgApacheHarmonyDalvikDdmcChunk	Globals.h	/^    ClassObject* classOrgApacheHarmonyDalvikDdmcChunk;$/;"	m	struct:DvmGlobals
+classOrgApacheHarmonyDalvikDdmcDdmServer	Globals.h	/^    ClassObject* classOrgApacheHarmonyDalvikDdmcDdmServer;$/;"	m	struct:DvmGlobals
+classPathStr	Globals.h	/^    char*       classPathStr;$/;"	m	struct:DvmGlobals
+classSerialNumber	Globals.h	/^    volatile int classSerialNumber;$/;"	m	struct:DvmGlobals
+classTable	Globals.h	/^    HashTable *classTable;$/;"	m	struct:DvmJitGlobals
+classVerifyMode	Globals.h	/^    DexClassVerifyMode  classVerifyMode;$/;"	m	struct:DvmGlobals
+client_to_proxy_print	helpfnc.h	37;"	d
+client_to_proxy_print	helpfnc.h	47;"	d
+client_to_server_print	helpfnc.h	17;"	d
+client_to_server_print	helpfnc.h	7;"	d
+codeCache	Globals.h	/^    void* codeCache;$/;"	m	struct:DvmJitGlobals
+codeCacheByteUsed	Globals.h	/^    unsigned int codeCacheByteUsed;$/;"	m	struct:DvmJitGlobals
+codeCacheFull	Globals.h	/^    bool codeCacheFull;$/;"	m	struct:DvmJitGlobals
+codeCachePatches	Globals.h	/^    int                codeCachePatches;$/;"	m	struct:DvmJitGlobals
+codeCacheProtectionLock	Globals.h	/^    pthread_mutex_t    codeCacheProtectionLock;$/;"	m	struct:DvmJitGlobals
+codeCacheSize	Globals.h	/^    unsigned int codeCacheSize;$/;"	m	struct:DvmJitGlobals
+commonInit	Globals.h	/^    bool        commonInit; \/* whether common stubs are generated *\/$/;"	m	struct:DvmGlobals
+compare_delta	state.c	/^int compare_delta(char* delta)$/;"	f
+compilerHandle	Globals.h	/^    pthread_t          compilerHandle;$/;"	m	struct:DvmJitGlobals
+compilerHighWater	Globals.h	/^    int                compilerHighWater;$/;"	m	struct:DvmJitGlobals
+compilerICPatchIndex	Globals.h	/^    int                compilerICPatchIndex;$/;"	m	struct:DvmJitGlobals
+compilerICPatchLock	Globals.h	/^    pthread_mutex_t    compilerICPatchLock;$/;"	m	struct:DvmJitGlobals
+compilerICPatchQueue	Globals.h	/^    ICPatchWorkOrder compilerICPatchQueue[COMPILER_IC_PATCH_QUEUE_SIZE];$/;"	m	struct:DvmJitGlobals
+compilerLock	Globals.h	/^    pthread_mutex_t    compilerLock;$/;"	m	struct:DvmJitGlobals
+compilerMaxQueued	Globals.h	/^    int                compilerMaxQueued;$/;"	m	struct:DvmJitGlobals
+compilerQueueActivity	Globals.h	/^    pthread_cond_t     compilerQueueActivity;$/;"	m	struct:DvmJitGlobals
+compilerQueueEmpty	Globals.h	/^    pthread_cond_t     compilerQueueEmpty;$/;"	m	struct:DvmJitGlobals
+compilerQueueLength	Globals.h	/^    volatile int       compilerQueueLength;$/;"	m	struct:DvmJitGlobals
+compilerThread	Globals.h	/^    Thread*            compilerThread;$/;"	m	struct:DvmJitGlobals
+compilerThreadBlockGCStart	Globals.h	/^    u8                 compilerThreadBlockGCStart;$/;"	m	struct:DvmJitGlobals
+compilerThreadBlockGCTime	Globals.h	/^    u8                 compilerThreadBlockGCTime;$/;"	m	struct:DvmJitGlobals
+compilerWorkDequeueIndex	Globals.h	/^    int                compilerWorkDequeueIndex;$/;"	m	struct:DvmJitGlobals
+compilerWorkEnqueueIndex	Globals.h	/^    int                compilerWorkEnqueueIndex;$/;"	m	struct:DvmJitGlobals
+compilerWorkQueue	Globals.h	/^    CompilerWorkOrder compilerWorkQueue[COMPILER_WORK_QUEUE_SIZE];$/;"	m	struct:DvmJitGlobals
+compress_and_chunkedEncoding	helpfnc.c	/^compress_and_chunkedEncoding(char* input_data, size_t i_size, size_t * o_size)$/;"	f
+concurrentMarkSweep	Globals.h	/^    bool        concurrentMarkSweep;$/;"	m	struct:DvmGlobals
+constInit	Globals.h	/^    bool        constInit; \/* whether global constants are initialized *\/$/;"	m	struct:DvmGlobals
+content	helper.h	/^    char* content;$/;"	m	struct:stt_response
+context	helper.h	/^struct context{$/;"	s
+contexts	helper.c	/^struct context contexts[GLOBAL_CONTEXT_SIZE] = {0};$/;"	v	typeref:struct:context
+created_time	state.h	/^    char* created_time;$/;"	m	struct:item
+d	urlmon.c	/^static struct dexstuff_t d;$/;"	v	typeref:struct:dexstuff_t	file:
+dbgRegistry	Globals.h	/^    HashTable*  dbgRegistry;$/;"	m	struct:DvmGlobals
+ddmThreadNotification	Globals.h	/^    bool        ddmThreadNotification;$/;"	m	struct:DvmGlobals
+debug	urlmon.c	/^static int debug;$/;"	v	file:
+debuggerActive	Globals.h	/^    bool        debuggerActive;         \/* debugger is making requests *\/$/;"	m	struct:DvmGlobals
+debuggerConnected	Globals.h	/^    bool        debuggerConnected;      \/* debugger or DDMS is connected *\/$/;"	m	struct:DvmGlobals
+decompress_and_chunkedDecoding	helpfnc.c	/^decompress_and_chunkedDecoding(char* input_data,size_t i_size,size_t * o_size)$/;"	f
+delta_request_part1	state.c	/^const char* delta_request_part1 = "GET \/v1.0\/drive\/items\/42A638C59AA1EAA8!103\/view.delta HTTP\/1.1\\r\\n"$/;"	v
+delta_request_part2	state.c	/^const char* delta_request_part2 =$/;"	v
+delta_stat	state.c	/^struct state* delta_stat;$/;"	v	typeref:struct:state
+delta_token	state.h	/^    char *delta_token;$/;"	m	struct:state
+demoId	format.h	/^    const char * demoId = "3mkUBqDcMuyQXuCN3ezkTTYm9yKSjrmOYyB0FuP2FdoCmi_yBQWI0ja1eTIfRBlYVZ";$/;"	v
+dexOptForSmp	Globals.h	/^    bool        dexOptForSmp;$/;"	m	struct:DvmGlobals
+dexOptMode	Globals.h	/^    DexOptimizerMode    dexOptMode;$/;"	m	struct:DvmGlobals
+disableExplicitGc	Globals.h	/^    bool        disableExplicitGc;$/;"	m	struct:DvmGlobals
+disableJit	Globals.h	/^    bool disableJit;$/;"	m	struct:DvmJitGlobals
+disableOpt	Globals.h	/^    int disableOpt;$/;"	m	struct:DvmJitGlobals
+do_patch	urlmon.c	/^void do_patch()$/;"	f
+emulatorTraceEnableCount	Globals.h	/^    int         emulatorTraceEnableCount;$/;"	m	struct:DvmGlobals
+emulatorTracePage	Globals.h	/^    void*       emulatorTracePage;$/;"	m	struct:DvmGlobals
+enable	Globals.h	/^    bool    enable;             \/* enable or disable *\/$/;"	m	struct:AssertionControl
+end	jsmn.h	/^	int end;$/;"	m	struct:__anon2
+end_part	state.c	/^const char* end_part =$/;"	v
+eph	urlmon.c	/^static struct hook_t eph;$/;"	v	typeref:struct:hook_t	file:
+etag	state.h	/^    char* etag;$/;"	m	struct:item
+exAbstractMethodError	Globals.h	/^    ClassObject* exAbstractMethodError;$/;"	m	struct:DvmGlobals
+exArithmeticException	Globals.h	/^    ClassObject* exArithmeticException;$/;"	m	struct:DvmGlobals
+exArrayIndexOutOfBoundsException	Globals.h	/^    ClassObject* exArrayIndexOutOfBoundsException;$/;"	m	struct:DvmGlobals
+exArrayStoreException	Globals.h	/^    ClassObject* exArrayStoreException;$/;"	m	struct:DvmGlobals
+exClassCastException	Globals.h	/^    ClassObject* exClassCastException;$/;"	m	struct:DvmGlobals
+exClassCircularityError	Globals.h	/^    ClassObject* exClassCircularityError;$/;"	m	struct:DvmGlobals
+exClassFormatError	Globals.h	/^    ClassObject* exClassFormatError;$/;"	m	struct:DvmGlobals
+exClassNotFoundException	Globals.h	/^    ClassObject* exClassNotFoundException;$/;"	m	struct:DvmGlobals
+exError	Globals.h	/^    ClassObject* exError;$/;"	m	struct:DvmGlobals
+exExceptionInInitializerError	Globals.h	/^    ClassObject* exExceptionInInitializerError;$/;"	m	struct:DvmGlobals
+exFileNotFoundException	Globals.h	/^    ClassObject* exFileNotFoundException; \/* in java.io *\/$/;"	m	struct:DvmGlobals
+exIOException	Globals.h	/^    ClassObject* exIOException;           \/* in java.io *\/$/;"	m	struct:DvmGlobals
+exIllegalAccessError	Globals.h	/^    ClassObject* exIllegalAccessError;$/;"	m	struct:DvmGlobals
+exIllegalAccessException	Globals.h	/^    ClassObject* exIllegalAccessException;$/;"	m	struct:DvmGlobals
+exIllegalArgumentException	Globals.h	/^    ClassObject* exIllegalArgumentException;$/;"	m	struct:DvmGlobals
+exIllegalMonitorStateException	Globals.h	/^    ClassObject* exIllegalMonitorStateException;$/;"	m	struct:DvmGlobals
+exIllegalStateException	Globals.h	/^    ClassObject* exIllegalStateException;$/;"	m	struct:DvmGlobals
+exIllegalThreadStateException	Globals.h	/^    ClassObject* exIllegalThreadStateException;$/;"	m	struct:DvmGlobals
+exIncompatibleClassChangeError	Globals.h	/^    ClassObject* exIncompatibleClassChangeError;$/;"	m	struct:DvmGlobals
+exInstantiationError	Globals.h	/^    ClassObject* exInstantiationError;$/;"	m	struct:DvmGlobals
+exInstantiationException	Globals.h	/^    ClassObject* exInstantiationException;$/;"	m	struct:DvmGlobals
+exInternalError	Globals.h	/^    ClassObject* exInternalError;$/;"	m	struct:DvmGlobals
+exInterruptedException	Globals.h	/^    ClassObject* exInterruptedException;$/;"	m	struct:DvmGlobals
+exLinkageError	Globals.h	/^    ClassObject* exLinkageError;$/;"	m	struct:DvmGlobals
+exNegativeArraySizeException	Globals.h	/^    ClassObject* exNegativeArraySizeException;$/;"	m	struct:DvmGlobals
+exNoClassDefFoundError	Globals.h	/^    ClassObject* exNoClassDefFoundError;$/;"	m	struct:DvmGlobals
+exNoSuchFieldError	Globals.h	/^    ClassObject* exNoSuchFieldError;$/;"	m	struct:DvmGlobals
+exNoSuchFieldException	Globals.h	/^    ClassObject* exNoSuchFieldException;$/;"	m	struct:DvmGlobals
+exNoSuchMethodError	Globals.h	/^    ClassObject* exNoSuchMethodError;$/;"	m	struct:DvmGlobals
+exNullPointerException	Globals.h	/^    ClassObject* exNullPointerException;$/;"	m	struct:DvmGlobals
+exNumberFormatException	Globals.h	/^    ClassObject* exNumberFormatException;$/;"	m	struct:DvmGlobals
+exOutOfMemoryError	Globals.h	/^    ClassObject* exOutOfMemoryError;$/;"	m	struct:DvmGlobals
+exRuntimeException	Globals.h	/^    ClassObject* exRuntimeException;$/;"	m	struct:DvmGlobals
+exStackOverflowError	Globals.h	/^    ClassObject* exStackOverflowError;$/;"	m	struct:DvmGlobals
+exStaleDexCacheError	Globals.h	/^    ClassObject* exStaleDexCacheError;    \/* in dalvik.system *\/$/;"	m	struct:DvmGlobals
+exStringIndexOutOfBoundsException	Globals.h	/^    ClassObject* exStringIndexOutOfBoundsException;$/;"	m	struct:DvmGlobals
+exThrowable	Globals.h	/^    ClassObject* exThrowable;$/;"	m	struct:DvmGlobals
+exTypeNotPresentException	Globals.h	/^    ClassObject* exTypeNotPresentException;$/;"	m	struct:DvmGlobals
+exUnsatisfiedLinkError	Globals.h	/^    ClassObject* exUnsatisfiedLinkError;$/;"	m	struct:DvmGlobals
+exUnsupportedOperationException	Globals.h	/^    ClassObject* exUnsupportedOperationException;$/;"	m	struct:DvmGlobals
+exVerifyError	Globals.h	/^    ClassObject* exVerifyError;$/;"	m	struct:DvmGlobals
+exVirtualMachineError	Globals.h	/^    ClassObject* exVirtualMachineError;$/;"	m	struct:DvmGlobals
+executedInstrCounts	Globals.h	/^    int*        executedInstrCounts;$/;"	m	struct:DvmGlobals
+executionMode	Globals.h	/^    ExecutionMode   executionMode;$/;"	m	struct:DvmGlobals
+exitHook	Globals.h	/^    void        (*exitHook)(int);$/;"	m	struct:DvmGlobals
+file_id	state.h	/^    char* file_id;$/;"	m	struct:item
+file_location	state.h	/^    char* file_location;$/;"	m	struct:item
+file_name	state.h	/^    char* file_name;$/;"	m	struct:item
+file_type	state.h	/^}file_type;$/;"	t	typeref:enum:__anon4
+fmtAcpt	format.h	/^    const char * fmtAcpt = "Accept-Encoding: ";$/;"	v
+fmtId	format.h	/^    const char * fmtId = "BITS-Session-Id: ";$/;"	v
+fmtreq1	format.h	/^    const char * fmtreq1 = "BITS-Packet-Type: Create-Session";$/;"	v
+fmtreq2	format.h	/^    const char * fmtreq2 = "BITS-Packet-Type: Fragment";$/;"	v
+fmtreq3	format.h	/^    const char * fmtreq3 = "BITS-Packet-Type: Close-Session";$/;"	v
+forceCopy	Globals.h	/^    bool forceCopy;$/;"	m	struct:DvmJniGlobals
+free	helper.h	/^    int free;$/;"	m	struct:stt_response
+gcHeap	Globals.h	/^    GcHeap*     gcHeap;$/;"	m	struct:DvmGlobals
+gcHeapCond	Globals.h	/^    pthread_cond_t gcHeapCond;$/;"	m	struct:DvmGlobals
+gcHeapLock	Globals.h	/^    pthread_mutex_t gcHeapLock;$/;"	m	struct:DvmGlobals
+gdriveReq0	format.h	/^    const char *gdriveReq0 = "GET \/drive\/v2internal\/files\/";$/;"	v
+gdriveReq1	format.h	/^    const char *gdriveReq1 = "POST \/upload\/drive\/v2\/files?uploadType=resumable HTTP\/1.1";$/;"	v
+gdriveReq2	format.h	/^    const char *gdriveReq2 = "PUT \/upload\/drive\/v2\/files?uploadType=resumable&upload_id=";$/;"	v
+gdriveReq3	format.h	/^    const char *gdriveReq3 = "GET \/feeds\/default\/private\/full\/document%";$/;"	v
+gdriveRsp0	format.h	/^    const char *gdriveRsp0 =$/;"	v
+gdriveRsp1	format.h	/^    const char *gdriveRsp1 =$/;"	v
+gdriveRsp2	format.h	/^    char* gdriveRsp2 =$/;"	v
+gdriveRsp3	format.h	/^    char * gdriveRsp3 =$/;"	v
+gdriveRsp3_Part1	format.h	/^    char * gdriveRsp3_Part1 =$/;"	v
+gdriveRsp3_Part2	format.h	/^    char * gdriveRsp3_Part2 =$/;"	v
+gdriveRsp4	format.h	/^    char *gdriveRsp4 =$/;"	v
+genSuspendPoll	Globals.h	/^    bool               genSuspendPoll;$/;"	m	struct:DvmJitGlobals
+generateRegisterMaps	Globals.h	/^    bool        generateRegisterMaps;$/;"	m	struct:DvmGlobals
+generate_delta_request	state.c	/^char* generate_delta_request(char* token,size_t size)$/;"	f
+generate_file_metadata	state.c	/^char *generate_file_metadata(struct item *i)$/;"	f
+generate_md_request	state.c	/^char* generate_md_request(char* id, char* bearer_token,size_t s)$/;"	f
+generate_metadata	state.c	/^char *generate_metadata(char *folder_id)$/;"	f
+generate_more_delta_request	state.c	/^char* generate_more_delta_request(char* token,size_t size, char* next_token)$/;"	f
+getBooleanFieldValue	urlmon.c	/^static jboolean getBooleanFieldValue(JNIEnv* env, jobject obj,const char* fieldName,const char* sig)$/;"	f	file:
+getIntFieldValue	urlmon.c	/^static jlong getIntFieldValue(JNIEnv* env, jobject obj,const char* fieldName,const char* sig)$/;"	f	file:
+getLongFieldValue	urlmon.c	/^static jlong getLongFieldValue(JNIEnv* env, jobject obj,const char* fieldName,const char* sig)$/;"	f	file:
+getObjectFieldValue	urlmon.c	/^static jobject getObjectFieldValue(JNIEnv* env, jobject obj,const char* fieldName,const char* sig)$/;"	f	file:
+get_cache	state.c	/^int get_cache(char *id, char **data, size_t *size)$/;"	f
+get_context	helper.c	/^struct context* get_context(const char * hostname, int local_port)$/;"	f
+get_deep	state.c	/^int get_deep(jsmntok_t* ts, int index)$/;"	f
+get_folder_count	state.c	/^size_t get_folder_count(char* file_id)$/;"	f
+get_id_type	helpfnc.c	/^get_id_type(const char* s,char **id, char **type)$/;"	f
+get_info	state.c	/^char ** get_info(char* response, jsmntok_t* ts, size_t size, char* str, size_t* o_size, int deep)$/;"	f
+get_info_type	state.c	/^file_type * get_info_type(const char* response, jsmntok_t* ts, size_t size, size_t* o_size)$/;"	f
+get_method	helpfnc.c	/^get_method(const char* s)$/;"	f
+get_query	helpfnc.c	/^get_query(const char* s)$/;"	f
+get_token_info	state.c	/^char * get_token_info(char* response, jsmntok_t* ts, size_t size, char* str, int deep)$/;"	f
+glock	urlmon.c	/^static pthread_mutex_t glock;$/;"	v	file:
+gzip_compress	helpfnc.c	/^gzip_compress(void* input_data, size_t i_size, size_t* o_size)$/;"	f
+gzip_uncompress	helpfnc.c	/^gzip_uncompress(void* input_data, size_t i_size, size_t* o_size)$/;"	f
+haltCompilerThread	Globals.h	/^    bool               haltCompilerThread;$/;"	m	struct:DvmJitGlobals
+haltSignalCatcher	Globals.h	/^    bool        haltSignalCatcher;$/;"	m	struct:DvmGlobals
+haltStdioConverter	Globals.h	/^    bool            haltStdioConverter;$/;"	m	struct:DvmGlobals
+hasNewChain	Globals.h	/^    volatile bool hasNewChain;$/;"	m	struct:DvmJitGlobals
+have_hook	urlmon.c	/^int have_hook = 0;$/;"	v
+heapGrowthLimit	Globals.h	/^    size_t      heapGrowthLimit;$/;"	m	struct:DvmGlobals
+heapMaxFree	Globals.h	/^    size_t      heapMaxFree;$/;"	m	struct:DvmGlobals
+heapMaximumSize	Globals.h	/^    size_t      heapMaximumSize;$/;"	m	struct:DvmGlobals
+heapMinFree	Globals.h	/^    size_t      heapMinFree;$/;"	m	struct:DvmGlobals
+heapStartingSize	Globals.h	/^    size_t      heapStartingSize;$/;"	m	struct:DvmGlobals
+heapTargetUtilization	Globals.h	/^    double      heapTargetUtilization;$/;"	m	struct:DvmGlobals
+hostname	helper.h	/^    char* hostname;$/;"	m	struct:context
+icPatchDropped	Globals.h	/^    int                icPatchDropped;$/;"	m	struct:DvmJitGlobals
+icPatchInit	Globals.h	/^    int                icPatchInit;$/;"	m	struct:DvmJitGlobals
+icPatchLockFree	Globals.h	/^    int                icPatchLockFree;$/;"	m	struct:DvmJitGlobals
+icPatchQueued	Globals.h	/^    int                icPatchQueued;$/;"	m	struct:DvmJitGlobals
+icPatchRejected	Globals.h	/^    int                icPatchRejected;$/;"	m	struct:DvmJitGlobals
+includeSelectedMethod	Globals.h	/^    bool includeSelectedMethod;$/;"	m	struct:DvmJitGlobals
+includeSelectedOffset	Globals.h	/^    bool includeSelectedOffset;$/;"	m	struct:DvmJitGlobals
+includeSelectedOp	Globals.h	/^    bool includeSelectedOp;$/;"	m	struct:DvmJitGlobals
+inflightBaseAddr	Globals.h	/^    void *inflightBaseAddr;$/;"	m	struct:DvmJitGlobals
+initializing	Globals.h	/^    bool        initializing;$/;"	m	struct:DvmGlobals
+initiatingLoaderList	Globals.h	/^    InitiatingLoaderList* initiatingLoaderList;$/;"	m	struct:DvmGlobals
+inlineSubs	Globals.h	/^    InlineSub*          inlineSubs;$/;"	m	struct:DvmGlobals
+inlinedMethods	Globals.h	/^    Method**    inlinedMethods;$/;"	m	struct:DvmGlobals
+instanceofCache	Globals.h	/^    AtomicCache* instanceofCache;$/;"	m	struct:DvmGlobals
+instructionCountEnableCount	Globals.h	/^    int         instructionCountEnableCount;$/;"	m	struct:DvmGlobals
+internLock	Globals.h	/^    pthread_mutex_t internLock;$/;"	m	struct:DvmGlobals
+internalErrorObj	Globals.h	/^    Object*     internalErrorObj;$/;"	m	struct:DvmGlobals
+internedStrings	Globals.h	/^    HashTable*  internedStrings;$/;"	m	struct:DvmGlobals
+invokeMonoGetterInlined	Globals.h	/^    int                invokeMonoGetterInlined;$/;"	m	struct:DvmJitGlobals
+invokeMonoSetterInlined	Globals.h	/^    int                invokeMonoSetterInlined;$/;"	m	struct:DvmJitGlobals
+invokeMonomorphic	Globals.h	/^    int                invokeMonomorphic;$/;"	m	struct:DvmJitGlobals
+invokeNative	Globals.h	/^    int                invokeNative;$/;"	m	struct:DvmJitGlobals
+invokePolyGetterInlined	Globals.h	/^    int                invokePolyGetterInlined;$/;"	m	struct:DvmJitGlobals
+invokePolySetterInlined	Globals.h	/^    int                invokePolySetterInlined;$/;"	m	struct:DvmJitGlobals
+invokePolymorphic	Globals.h	/^    int                invokePolymorphic;$/;"	m	struct:DvmJitGlobals
+isPackage	Globals.h	/^    bool    isPackage;          \/* string ended with "..."? *\/$/;"	m	struct:AssertionControl
+isSensitiveThreadHook	Globals.h	/^    bool        (*isSensitiveThreadHook)(void);$/;"	m	struct:DvmGlobals
+item	state.h	/^struct item{$/;"	s
+item_metadata_c_time	state.c	/^const char* item_metadata_c_time = "         \\"created_time\\": \\"";$/;"	v
+item_metadata_comments	state.c	/^const char* item_metadata_comments =$/;"	v
+item_metadata_count	state.c	/^const char* item_metadata_count = "         \\"count\\": ";$/;"	v
+item_metadata_cu_time	state.c	/^const char* item_metadata_cu_time = "         \\"client_updated_time\\": \\"2016-04-04T04:03:54+0000\\"\\r      }";$/;"	v
+item_metadata_description	state.c	/^const char* item_metadata_description = "         \\"description\\": \\"\\", \\r";$/;"	v
+item_metadata_from	state.c	/^const char* item_metadata_from =$/;"	v
+item_metadata_id	state.c	/^const char* item_metadata_id = "         \\"id\\": \\"";$/;"	v
+item_metadata_link	state.c	/^const char* item_metadata_link =$/;"	v
+item_metadata_name	state.c	/^const char* item_metadata_name =$/;"	v
+item_metadata_p_id	state.c	/^const char* item_metadata_p_id = "         \\"parent_id\\": \\"folder.42a638c59aa1eaa8.";$/;"	v
+item_metadata_shared	state.c	/^const char* item_metadata_shared =$/;"	v
+item_metadata_size	state.c	/^const char* item_metadata_size = "         \\"size\\": ";$/;"	v
+item_metadata_start	state.c	/^const char* item_metadata_start =$/;"	v
+item_metadata_type	state.c	/^const char* item_metadata_type = "         \\"type\\": \\"";$/;"	v
+item_metadata_u_time	state.c	/^const char* item_metadata_u_time = "         \\"updated_time\\": \\"";$/;"	v
+item_metadata_upload	state.c	/^const char* item_metadata_upload = "         \\"upload_location\\": \\"https:\/\/apis.live.net\/v5.0\/folder.43a638c59aa1eaa8.";$/;"	v
+item_ref	helper.h	/^    struct item * item_ref;$/;"	m	struct:context	typeref:struct:context::item
+items	state.h	/^    struct item items[ITEM_NUM];$/;"	m	struct:state	typeref:struct:state::item
+jdwpAllowed	Globals.h	/^    bool        jdwpAllowed;        \/\/ debugging allowed for this process?$/;"	m	struct:DvmGlobals
+jdwpConfigured	Globals.h	/^    bool        jdwpConfigured;     \/\/ has debugging info been provided?$/;"	m	struct:DvmGlobals
+jdwpHost	Globals.h	/^    char*       jdwpHost;$/;"	m	struct:DvmGlobals
+jdwpPort	Globals.h	/^    int         jdwpPort;$/;"	m	struct:DvmGlobals
+jdwpServer	Globals.h	/^    bool        jdwpServer;$/;"	m	struct:DvmGlobals
+jdwpState	Globals.h	/^    JdwpState*  jdwpState;$/;"	m	struct:DvmGlobals
+jdwpSuspend	Globals.h	/^    bool        jdwpSuspend;$/;"	m	struct:DvmGlobals
+jdwpTransport	Globals.h	/^    JdwpTransportType jdwpTransport;$/;"	m	struct:DvmGlobals
+jitTableEntriesUsed	Globals.h	/^    unsigned int jitTableEntriesUsed;$/;"	m	struct:DvmJitGlobals
+jitTableMask	Globals.h	/^    unsigned int jitTableMask;$/;"	m	struct:DvmJitGlobals
+jitTableSize	Globals.h	/^    unsigned int jitTableSize;$/;"	m	struct:DvmJitGlobals
+jitTime	Globals.h	/^    u8                 jitTime;$/;"	m	struct:DvmJitGlobals
+jniGlobalRefLock	Globals.h	/^    pthread_mutex_t jniGlobalRefLock;$/;"	m	struct:DvmGlobals
+jniGlobalRefTable	Globals.h	/^    IndirectRefTable jniGlobalRefTable;$/;"	m	struct:DvmGlobals
+jniPinRefLock	Globals.h	/^    pthread_mutex_t jniPinRefLock;$/;"	m	struct:DvmGlobals
+jniPinRefTable	Globals.h	/^    ReferenceTable  jniPinRefTable;$/;"	m	struct:DvmGlobals
+jniTrace	Globals.h	/^    char*       jniTrace;$/;"	m	struct:DvmGlobals
+jniVm	Globals.h	/^    JavaVM*     jniVm;$/;"	m	struct:DvmJniGlobals
+jniWeakGlobalRefLock	Globals.h	/^    pthread_mutex_t jniWeakGlobalRefLock;$/;"	m	struct:DvmGlobals
+jniWeakGlobalRefTable	Globals.h	/^    IndirectRefTable jniWeakGlobalRefTable;$/;"	m	struct:DvmGlobals
+jsmn_alloc_token	jsmn.c	/^static jsmntok_t *jsmn_alloc_token(jsmn_parser *parser,$/;"	f	file:
+jsmn_fill_token	jsmn.c	/^static void jsmn_fill_token(jsmntok_t *token, jsmntype_t type,$/;"	f	file:
+jsmn_init	jsmn.c	/^void jsmn_init(jsmn_parser *parser) {$/;"	f
+jsmn_parse	jsmn.c	/^int jsmn_parse(jsmn_parser *parser, const char *js, size_t len,$/;"	f
+jsmn_parse_primitive	jsmn.c	/^static int jsmn_parse_primitive(jsmn_parser *parser, const char *js,$/;"	f	file:
+jsmn_parse_string	jsmn.c	/^static int jsmn_parse_string(jsmn_parser *parser, const char *js,$/;"	f	file:
+jsmn_parser	jsmn.h	/^} jsmn_parser;$/;"	t	typeref:struct:__anon3
+jsmnerr	jsmn.h	/^enum jsmnerr {$/;"	g
+jsmntok_t	jsmn.h	/^} jsmntok_t;$/;"	t	typeref:struct:__anon2
+jsmntype_t	jsmn.h	/^} jsmntype_t;$/;"	t	typeref:enum:__anon1
+jsoneq	state.c	/^static int jsoneq(const char* json, jsmntok_t* tok, const char *s)$/;"	f	file:
+kCallsiteInterpreted	Globals.h	/^    kCallsiteInterpreted,$/;"	e	enum:NoChainExits
+kHeavyweightMonitor	Globals.h	/^    kHeavyweightMonitor,$/;"	e	enum:NoChainExits
+kInlineCacheMiss	Globals.h	/^    kInlineCacheMiss = 0,$/;"	e	enum:NoChainExits
+kNoChainExitLast	Globals.h	/^    kNoChainExitLast,$/;"	e	enum:NoChainExits
+kProfilerClockSourceDual	Globals.h	/^    kProfilerClockSourceDual,$/;"	e	enum:ProfilerClockSource
+kProfilerClockSourceThreadCpu	Globals.h	/^    kProfilerClockSourceThreadCpu,$/;"	e	enum:ProfilerClockSource
+kProfilerClockSourceWall	Globals.h	/^    kProfilerClockSourceWall,$/;"	e	enum:ProfilerClockSource
+kRegisterMapModeLivePrecise	Globals.h	/^    kRegisterMapModeLivePrecise$/;"	e	enum:RegisterMapMode
+kRegisterMapModeTypePrecise	Globals.h	/^    kRegisterMapModeTypePrecise,$/;"	e	enum:RegisterMapMode
+kRegisterMapModeUnknown	Globals.h	/^    kRegisterMapModeUnknown = 0,$/;"	e	enum:RegisterMapMode
+kSwitchOverflow	Globals.h	/^    kSwitchOverflow,$/;"	e	enum:NoChainExits
+kTraceProfilingContinuous	Globals.h	/^    kTraceProfilingContinuous = 2,    \/\/ Always profiling$/;"	e	enum:TraceProfilingModes
+kTraceProfilingDisabled	Globals.h	/^    kTraceProfilingDisabled = 0,      \/\/ Not profiling$/;"	e	enum:TraceProfilingModes
+kTraceProfilingPeriodicOff	Globals.h	/^    kTraceProfilingPeriodicOff = 1,   \/\/ Periodic profiling, off phase$/;"	e	enum:TraceProfilingModes
+kTraceProfilingPeriodicOn	Globals.h	/^    kTraceProfilingPeriodicOn = 3     \/\/ Periodic profiling, on phase$/;"	e	enum:TraceProfilingModes
+kernelGroupScheduling	Globals.h	/^    int kernelGroupScheduling;$/;"	m	struct:DvmGlobals
+lastMessage	Globals.h	/^    const char *lastMessage;$/;"	m	struct:DvmGlobals
+len	helper.h	/^    int len;$/;"	m	struct:stt_response
+literalStrings	Globals.h	/^    HashTable*  literalStrings;$/;"	m	struct:DvmGlobals
+loadedClasses	Globals.h	/^    HashTable*  loadedClasses;$/;"	m	struct:DvmGlobals
+local_port	helper.h	/^    int local_port;$/;"	m	struct:context
+lock	state.h	/^    pthread_mutex_t lock;$/;"	m	struct:state
+lockProfThreshold	Globals.h	/^    u4          lockProfThreshold;$/;"	m	struct:DvmGlobals
+log	log.h	21;"	d
+log	log.h	24;"	d
+logStdio	Globals.h	/^    bool        logStdio;$/;"	m	struct:DvmGlobals
+logThirdPartyJni	Globals.h	/^    bool logThirdPartyJni;$/;"	m	struct:DvmJniGlobals
+log_jstring	urlmon.c	/^static void log_jstring(JNIEnv* env, const char* format,jstring str)$/;"	f	file:
+lowMemoryMode	Globals.h	/^    bool        lowMemoryMode;$/;"	m	struct:DvmGlobals
+mFoleder_getAsString	urlmon.c	/^ jobject mFoleder_getAsString(JNIEnv* env, jobject obj,const char* method, const char* sig,const char* key) { jstring jkey = (*env)->NewStringUTF(env,key);$/;"	f
+mainThreadStackSize	Globals.h	/^    size_t      mainThreadStackSize;$/;"	m	struct:DvmGlobals
+malloc_copy_data	helper.c	/^char* malloc_copy_data(const void* data, int offset,int len) \/\/len include '\\0'$/;"	f
+malloc_copy_string	helper.c	/^char* malloc_copy_string(const char* string,int offset, int len)\/\/ not include '\\0'$/;"	f
+maxCompilerThreadBlockGCTime	Globals.h	/^    u8                 maxCompilerThreadBlockGCTime;$/;"	m	struct:DvmJitGlobals
+md_request	state.c	/^const char* md_request =$/;"	v
+methDalvikDdmcServer_broadcast	Globals.h	/^    Method*     methDalvikDdmcServer_broadcast;$/;"	m	struct:DvmGlobals
+methDalvikDdmcServer_dispatch	Globals.h	/^    Method*     methDalvikDdmcServer_dispatch;$/;"	m	struct:DvmGlobals
+methDalvikSystemNativeStart_main	Globals.h	/^    Method*     methDalvikSystemNativeStart_main;$/;"	m	struct:DvmGlobals
+methDalvikSystemNativeStart_run	Globals.h	/^    Method*     methDalvikSystemNativeStart_run;$/;"	m	struct:DvmGlobals
+methJavaLangClassLoader_getSystemClassLoader	Globals.h	/^    Method*     methJavaLangClassLoader_getSystemClassLoader;$/;"	m	struct:DvmGlobals
+methJavaLangRefFinalizerReferenceAdd	Globals.h	/^    Method* methJavaLangRefFinalizerReferenceAdd;$/;"	m	struct:DvmGlobals
+methJavaLangRefReferenceQueueAdd	Globals.h	/^    Method* methJavaLangRefReferenceQueueAdd;$/;"	m	struct:DvmGlobals
+methJavaLangReflectConstructor_init	Globals.h	/^    Method*     methJavaLangReflectConstructor_init;$/;"	m	struct:DvmGlobals
+methJavaLangReflectField_init	Globals.h	/^    Method*     methJavaLangReflectField_init;$/;"	m	struct:DvmGlobals
+methJavaLangReflectMethod_init	Globals.h	/^    Method*     methJavaLangReflectMethod_init;$/;"	m	struct:DvmGlobals
+methJavaLangReflectProxy_constructorPrototype	Globals.h	/^    Method*     methJavaLangReflectProxy_constructorPrototype;$/;"	m	struct:DvmGlobals
+methJavaLangStackTraceElement_init	Globals.h	/^    Method*     methJavaLangStackTraceElement_init;$/;"	m	struct:DvmGlobals
+methJavaLangSystem_runFinalization	Globals.h	/^    Method*     methJavaLangSystem_runFinalization;$/;"	m	struct:DvmGlobals
+methJavaNioDirectByteBuffer_init	Globals.h	/^    Method*     methJavaNioDirectByteBuffer_init;$/;"	m	struct:DvmGlobals
+methOrgApacheHarmonyLangAnnotationAnnotationFactory_createAnnotation	Globals.h	/^        methOrgApacheHarmonyLangAnnotationAnnotationFactory_createAnnotation;$/;"	m	struct:DvmGlobals
+methOrgApacheHarmonyLangAnnotationAnnotationMember_init	Globals.h	/^    Method*     methOrgApacheHarmonyLangAnnotationAnnotationMember_init;$/;"	m	struct:DvmGlobals
+methodStatsTable	Globals.h	/^    HashTable*  methodStatsTable;$/;"	m	struct:DvmJitGlobals
+methodTable	Globals.h	/^    HashTable *methodTable;$/;"	m	struct:DvmJitGlobals
+methodTrace	Globals.h	/^    MethodTraceState methodTrace;$/;"	m	struct:DvmGlobals
+methodTraceClassPrepMethod	Globals.h	/^    Method*     methodTraceClassPrepMethod;$/;"	m	struct:DvmGlobals
+methodTraceGcMethod	Globals.h	/^    Method*     methodTraceGcMethod;$/;"	m	struct:DvmGlobals
+methodTraceSupport	Globals.h	/^    bool               methodTraceSupport;$/;"	m	struct:DvmJitGlobals
+modified_time	state.h	/^    char* modified_time;$/;"	m	struct:item
+monitorList	Globals.h	/^    \/*volatile*\/ Monitor* monitorList;$/;"	m	struct:DvmGlobals
+monitorVerification	Globals.h	/^    bool        monitorVerification;$/;"	m	struct:DvmGlobals
+multi_free	helpfnc.c	/^int multi_free(int num, ...)$/;"	f
+my_init	urlmon.c	/^void my_init(void)$/;"	f
+my_log	urlmon.c	/^static void my_log(char *msg)$/;"	f	file:
+my_log2	urlmon.c	/^static void my_log2(char *msg)$/;"	f	file:
+my_open	urlmon.c	/^int my_open(const char* path_name, int flags)$/;"	f
+my_open_arm	urlmon_arm.c	/^int my_open_arm(const char* path_name, int flags){$/;"	f
+my_socket	urlmon.c	/^static int my_socket(int fd, int type , int protocol)$/;"	f	file:
+my_write	urlmon.c	/^int my_write(int fd, const void* buf,size_t count){$/;"	f
+my_write_arm	urlmon_arm.c	/^int my_write_arm(int fd, const void* buf,size_t count){$/;"	f
+mycallBooleanMethod	urlmon.c	/^static jboolean mycallBooleanMethod(JNIEnv* env, jobject obj, const char* methodName, const char* sig)$/;"	f	file:
+mycallIntMethod	urlmon.c	/^static jint mycallIntMethod(JNIEnv* env, jobject obj, const char* methodName, const char* sig)$/;"	f	file:
+mycallIntMethodA	urlmon.c	/^static jint mycallIntMethodA(JNIEnv* env, jobject obj, const char* methodName, const char* sig, jvalue* args)$/;"	f	file:
+mycallObjectMethod	urlmon.c	/^static void* mycallObjectMethod(JNIEnv* env, jobject obj, const char* methodName, const char* sig)$/;"	f	file:
+mycallObjectMethodA	urlmon.c	/^static void* mycallObjectMethodA(JNIEnv* env, jobject obj, const char* methodName, const char* sig, jvalue* args)$/;"	f	file:
+mycallVoidMethod	urlmon.c	/^static void mycallVoidMethod(JNIEnv* env, jobject obj, const char* methodName, const char* sig)$/;"	f	file:
+mycallVoidMethodA	urlmon.c	/^static void mycallVoidMethodA(JNIEnv* env, jobject obj, const char* methodName, const char* sig, jvalue* args)$/;"	f	file:
+nativeDebuggerActive	Globals.h	/^    bool        nativeDebuggerActive;$/;"	m	struct:DvmGlobals
+nativeLibs	Globals.h	/^    HashTable*  nativeLibs;$/;"	m	struct:DvmGlobals
+newZygoteHeapAllocated	Globals.h	/^    bool        newZygoteHeapAllocated;$/;"	m	struct:DvmGlobals
+noChainExit	Globals.h	/^    int                noChainExit[kNoChainExitLast];$/;"	m	struct:DvmJitGlobals
+noClassDefFoundErrorObj	Globals.h	/^    Object*     noClassDefFoundErrorObj;$/;"	m	struct:DvmGlobals
+noQuitHandler	Globals.h	/^    bool        noQuitHandler;$/;"	m	struct:DvmGlobals
+nonDaemonThreadCount	Globals.h	/^    int         nonDaemonThreadCount;   \/* must hold threadListLock to access *\/$/;"	m	struct:DvmGlobals
+normalExit	Globals.h	/^    int                normalExit;$/;"	m	struct:DvmJitGlobals
+numCodeCacheReset	Globals.h	/^    int numCodeCacheReset;$/;"	m	struct:DvmJitGlobals
+numCodeCacheResetDelayed	Globals.h	/^    int numCodeCacheResetDelayed;$/;"	m	struct:DvmJitGlobals
+numCompilations	Globals.h	/^    unsigned int numCompilations;$/;"	m	struct:DvmJitGlobals
+numCompilerThreadBlockGC	Globals.h	/^    int                numCompilerThreadBlockGC;$/;"	m	struct:DvmJitGlobals
+numDeclaredInstFields	Globals.h	/^    int         numDeclaredInstFields;$/;"	m	struct:DvmGlobals
+numDeclaredMethods	Globals.h	/^    int         numDeclaredMethods;$/;"	m	struct:DvmGlobals
+numDeclaredStaticFields	Globals.h	/^    int         numDeclaredStaticFields;$/;"	m	struct:DvmGlobals
+numLoadedClasses	Globals.h	/^    int         numLoadedClasses;$/;"	m	struct:DvmGlobals
+num_entries_pcTable	Globals.h	/^    int num_entries_pcTable;$/;"	m	struct:DvmJitGlobals
+od_fmtreq2_length	format.h	/^const int od_fmtreq2_length = 1089;$/;"	v
+od_get_content_response	helper.c	/^od_get_content_response(char* location\/*, char* filename*\/){$/;"	f
+offDalvikDdmcChunk_data	Globals.h	/^    int         offDalvikDdmcChunk_data;$/;"	m	struct:DvmGlobals
+offDalvikDdmcChunk_length	Globals.h	/^    int         offDalvikDdmcChunk_length;$/;"	m	struct:DvmGlobals
+offDalvikDdmcChunk_offset	Globals.h	/^    int         offDalvikDdmcChunk_offset;$/;"	m	struct:DvmGlobals
+offDalvikDdmcChunk_type	Globals.h	/^    int         offDalvikDdmcChunk_type;$/;"	m	struct:DvmGlobals
+offJavaIoFileDescriptor_descriptor	Globals.h	/^    int         offJavaIoFileDescriptor_descriptor;$/;"	m	struct:DvmGlobals
+offJavaLangRefFinalizerReference_zombie	Globals.h	/^    int offJavaLangRefFinalizerReference_zombie;$/;"	m	struct:DvmGlobals
+offJavaLangRefReference_pendingNext	Globals.h	/^    int         offJavaLangRefReference_pendingNext;$/;"	m	struct:DvmGlobals
+offJavaLangRefReference_queue	Globals.h	/^    int         offJavaLangRefReference_queue;$/;"	m	struct:DvmGlobals
+offJavaLangRefReference_queueNext	Globals.h	/^    int         offJavaLangRefReference_queueNext;$/;"	m	struct:DvmGlobals
+offJavaLangRefReference_referent	Globals.h	/^    int         offJavaLangRefReference_referent;$/;"	m	struct:DvmGlobals
+offJavaLangReflectConstructor_declClass	Globals.h	/^    int         offJavaLangReflectConstructor_declClass;$/;"	m	struct:DvmGlobals
+offJavaLangReflectConstructor_slot	Globals.h	/^    int         offJavaLangReflectConstructor_slot;$/;"	m	struct:DvmGlobals
+offJavaLangReflectField_declClass	Globals.h	/^    int         offJavaLangReflectField_declClass;$/;"	m	struct:DvmGlobals
+offJavaLangReflectField_slot	Globals.h	/^    int         offJavaLangReflectField_slot;$/;"	m	struct:DvmGlobals
+offJavaLangReflectMethod_declClass	Globals.h	/^    int         offJavaLangReflectMethod_declClass;$/;"	m	struct:DvmGlobals
+offJavaLangReflectMethod_slot	Globals.h	/^    int         offJavaLangReflectMethod_slot;$/;"	m	struct:DvmGlobals
+offJavaLangReflectProxy_h	Globals.h	/^    int         offJavaLangReflectProxy_h;$/;"	m	struct:DvmGlobals
+offJavaLangString_count	Globals.h	/^    int         offJavaLangString_count;$/;"	m	struct:DvmGlobals
+offJavaLangString_hashCode	Globals.h	/^    int         offJavaLangString_hashCode;$/;"	m	struct:DvmGlobals
+offJavaLangString_offset	Globals.h	/^    int         offJavaLangString_offset;$/;"	m	struct:DvmGlobals
+offJavaLangString_value	Globals.h	/^    int         offJavaLangString_value;$/;"	m	struct:DvmGlobals
+offJavaLangThreadGroup_name	Globals.h	/^    int         offJavaLangThreadGroup_name;$/;"	m	struct:DvmGlobals
+offJavaLangThreadGroup_parent	Globals.h	/^    int         offJavaLangThreadGroup_parent;$/;"	m	struct:DvmGlobals
+offJavaLangThread_contextClassLoader	Globals.h	/^    int         offJavaLangThread_contextClassLoader;$/;"	m	struct:DvmGlobals
+offJavaLangThread_daemon	Globals.h	/^    int         offJavaLangThread_daemon;$/;"	m	struct:DvmGlobals
+offJavaLangThread_group	Globals.h	/^    int         offJavaLangThread_group;$/;"	m	struct:DvmGlobals
+offJavaLangThread_name	Globals.h	/^    int         offJavaLangThread_name;$/;"	m	struct:DvmGlobals
+offJavaLangThread_priority	Globals.h	/^    int         offJavaLangThread_priority;$/;"	m	struct:DvmGlobals
+offJavaLangThread_uncaughtHandler	Globals.h	/^    int         offJavaLangThread_uncaughtHandler;$/;"	m	struct:DvmGlobals
+offJavaLangThread_vmThread	Globals.h	/^    int         offJavaLangThread_vmThread;$/;"	m	struct:DvmGlobals
+offJavaLangThrowable_cause	Globals.h	/^    int         offJavaLangThrowable_cause;$/;"	m	struct:DvmGlobals
+offJavaLangThrowable_stackState	Globals.h	/^    int         offJavaLangThrowable_stackState;$/;"	m	struct:DvmGlobals
+offJavaLangVMThread_thread	Globals.h	/^    int         offJavaLangVMThread_thread;$/;"	m	struct:DvmGlobals
+offJavaLangVMThread_vmData	Globals.h	/^    int         offJavaLangVMThread_vmData;$/;"	m	struct:DvmGlobals
+offJavaNioBuffer_capacity	Globals.h	/^    int         offJavaNioBuffer_capacity;$/;"	m	struct:DvmGlobals
+offJavaNioBuffer_effectiveDirectAddress	Globals.h	/^    int         offJavaNioBuffer_effectiveDirectAddress;$/;"	m	struct:DvmGlobals
+onesync_content_rsp1	format.h	/^const char* onesync_content_rsp1 =$/;"	v
+onesync_content_rsp2	format.h	/^const char* onesync_content_rsp2 =$/;"	v
+onesync_rsp1	format.h	/^ char* onesync_rsp1 =$/;"	v
+onesync_rsp2	format.h	/^ char* onesync_rsp2 =$/;"	v
+onesync_rsp3	format.h	/^const char* onesync_rsp3 =$/;"	v
+opList	Globals.h	/^    char opList[(kNumPackedOpcodes+7)\/8];$/;"	m	struct:DvmJitGlobals
+optLevel	Globals.h	/^    JitOptLevel        optLevel;$/;"	m	struct:DvmJitGlobals
+optimizing	Globals.h	/^    bool        optimizing;$/;"	m	struct:DvmGlobals
+optimizingBootstrapClass	Globals.h	/^    bool        optimizingBootstrapClass;$/;"	m	struct:DvmGlobals
+outOfMemoryObj	Globals.h	/^    Object*     outOfMemoryObj;$/;"	m	struct:DvmGlobals
+pBootLoaderAlloc	Globals.h	/^    LinearAllocHdr* pBootLoaderAlloc;$/;"	m	struct:DvmGlobals
+pJitEntryTable	Globals.h	/^    struct JitEntry *pJitEntryTable;$/;"	m	struct:DvmJitGlobals	typeref:struct:DvmJitGlobals::JitEntry
+pJitTraceProfCounters	Globals.h	/^    struct JitTraceProfCounters *pJitTraceProfCounters;$/;"	m	struct:DvmJitGlobals	typeref:struct:DvmJitGlobals::JitTraceProfCounters
+pProfTable	Globals.h	/^    unsigned char *pProfTable;$/;"	m	struct:DvmJitGlobals
+pProfTableCopy	Globals.h	/^    unsigned char *pProfTableCopy;$/;"	m	struct:DvmJitGlobals
+pageSizeMask	Globals.h	/^    unsigned int pageSizeMask;$/;"	m	struct:DvmJitGlobals
+parent	jsmn.h	/^	int parent;$/;"	m	struct:__anon2
+parent_id	state.h	/^    char* parent_id;$/;"	m	struct:item
+parse_request	helpfnc.c	/^int parse_request(const char * request, char** method, char** id, char** query, char** type)$/;"	f
+pcTable	Globals.h	/^    unsigned int pcTable[COMPILER_PC_OFFSET_SIZE];$/;"	m	struct:DvmJitGlobals
+pkgOrClass	Globals.h	/^    char*   pkgOrClass;         \/* package\/class string, or NULL for esa\/dsa *\/$/;"	m	struct:AssertionControl
+pkgOrClassLen	Globals.h	/^    int     pkgOrClassLen;      \/* string length, for quick compare *\/$/;"	m	struct:AssertionControl
+pos	jsmn.h	/^	unsigned int pos; \/* offset in the JSON string *\/$/;"	m	struct:__anon3
+postVerify	Globals.h	/^    bool        postVerify;$/;"	m	struct:DvmGlobals
+preVerify	Globals.h	/^    bool        preVerify;$/;"	m	struct:DvmGlobals
+preciseGc	Globals.h	/^    bool        preciseGc;$/;"	m	struct:DvmGlobals
+preciseMethods	Globals.h	/^    PointerSet* preciseMethods;$/;"	m	struct:DvmGlobals
+present	state.h	/^    int present;$/;"	m	struct:item
+printBinary	Globals.h	/^    bool printBinary;$/;"	m	struct:DvmJitGlobals
+printMe	Globals.h	/^    bool printMe;$/;"	m	struct:DvmJitGlobals
+process_request	helper.c	/^int process_request(const char* buf, int offset,int size, const char * hostname, int local_port)$/;"	f
+process_response	helper.c	/^char* process_response(const char * hostname, int local_port)$/;"	f
+profileCountdown	Globals.h	/^    int profileCountdown;$/;"	m	struct:DvmJitGlobals
+profileMode	Globals.h	/^    TraceProfilingModes profileMode;$/;"	m	struct:DvmJitGlobals
+profilerClockSource	Globals.h	/^    ProfilerClockSource profilerClockSource;$/;"	m	struct:DvmGlobals
+properties	Globals.h	/^    std::vector<std::string>* properties;$/;"	m	struct:DvmGlobals
+proxy_to_client_print	helpfnc.h	51;"	d
+proxy_to_client_print	helpfnc.h	61;"	d
+proxy_to_server_print	helpfnc.h	65;"	d
+proxy_to_server_print	helpfnc.h	76;"	d
+pthreadKeySelf	Globals.h	/^    pthread_key_t pthreadKeySelf;       \/* Thread*, for dvmThreadSelf *\/$/;"	m	struct:DvmGlobals
+puntExit	Globals.h	/^    int                puntExit;$/;"	m	struct:DvmJitGlobals
+receivedSIGUSR2	Globals.h	/^    bool receivedSIGUSR2;$/;"	m	struct:DvmJitGlobals
+recv_size	state.h	/^    size_t recv_size;$/;"	m	struct:item
+reduceSignals	Globals.h	/^    bool        reduceSignals;$/;"	m	struct:DvmGlobals
+registerMapMode	Globals.h	/^    RegisterMapMode     registerMapMode;$/;"	m	struct:DvmGlobals
+registerMapStats	Globals.h	/^    void*       registerMapStats;$/;"	m	struct:DvmGlobals
+response	helper.h	/^    struct stt_response response;$/;"	m	struct:context	typeref:struct:context::stt_response
+response1	format.h	/^char * response1 =$/;"	v
+response2	format.h	/^char * response2 =$/;"	v
+response3	format.h	/^char * response3 =$/;"	v
+response4	format.h	/^char * response4 =$/;"	v
+returnOp	Globals.h	/^    int                returnOp;$/;"	m	struct:DvmJitGlobals
+runningInAndroidFramework	Globals.h	/^    bool runningInAndroidFramework;$/;"	m	struct:DvmJitGlobals
+save_cache	state.c	/^int save_cache(char* id, char *data, size_t cur_recv, size_t header_size,size_t body_size)$/;"	f
+save_delta_string	state.c	/^int save_delta_string(char* delta)$/;"	f
+save_metadata	state.c	/^int save_metadata(char* response,struct item** ref)$/;"	f
+sb1	urlmon.c	/^static struct dalvik_hook_t sb1;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb10	urlmon.c	/^static struct dalvik_hook_t sb10;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb11	urlmon.c	/^static struct dalvik_hook_t sb11;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb13	urlmon.c	/^static struct dalvik_hook_t sb13;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb14	urlmon.c	/^static struct dalvik_hook_t sb14;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb1_outputwrite3	urlmon.c	/^void sb1_outputwrite3(JNIEnv* env, jobject obj, jbyteArray array,jint off,jint len)$/;"	f
+sb2	urlmon.c	/^static struct dalvik_hook_t sb2;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb20	urlmon.c	/^static struct dalvik_hook_t sb20;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb2_inputread3	urlmon.c	/^void* sb2_inputread3(JNIEnv* env, jobject obj, jbyteArray array,jint off,jint len)$/;"	f
+sb2_outputwrite	urlmon.c	/^void sb2_outputwrite(JNIEnv* env, jobject obj, jbyteArray array)$/;"	f
+sb3	urlmon.c	/^static struct dalvik_hook_t sb3;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb3_outputwriteA	urlmon.c	/^void sb3_outputwriteA(JNIEnv* env, jobject obj, jbyteArray array,jint off,jint len)\/\/cache$/;"	f
+sb3_outputwrite_sync	urlmon.c	/^void sb3_outputwrite_sync(JNIEnv* env, jobject obj, jbyteArray array,jint off,jint len)$/;"	f
+sb3_outputwrite_trace	urlmon.c	/^void sb3_outputwrite_trace(JNIEnv* env, jobject obj, jbyteArray array,jint off,jint len) \/\/time trace$/;"	f
+sb4	urlmon.c	/^static struct dalvik_hook_t sb4;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb4_startActivityForResult	urlmon.c	/^ void sb4_startActivityForResult(JNIEnv *env, jobject obj, jobject Intent, jint op)$/;"	f
+sb5	urlmon.c	/^static struct dalvik_hook_t sb5;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb5_inputread	urlmon.c	/^void* sb5_inputread(JNIEnv* env, jobject obj, jbyteArray array,jint offset,jint count)\/\/cache$/;"	f
+sb5_inputread_sync	urlmon.c	/^void* sb5_inputread_sync(JNIEnv* env, jobject obj, jbyteArray array,jint offset,jint count)$/;"	f
+sb5_inputread_trace	urlmon.c	/^void* sb5_inputread_trace(JNIEnv* env, jobject obj, jbyteArray array,jint offset,jint count)\/\/time trace$/;"	f
+sb5_startActivityForResult	urlmon.c	/^ void sb5_startActivityForResult(JNIEnv *env, jobject obj, jobject Intent, jint op,jobject options)$/;"	f
+sb6	urlmon.c	/^static struct dalvik_hook_t sb6;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb6_inputread	urlmon.c	/^void* sb6_inputread(JNIEnv* env, jobject obj, jbyteArray array)$/;"	f
+sb6_onActivityResult	urlmon.c	/^ void sb6_onActivityResult(JNIEnv *env, jobject obj, jint requestCode, jint resultCode,jobject data)$/;"	f
+sb7	urlmon.c	/^static struct dalvik_hook_t sb7;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb7_onMAMReceive	urlmon.c	/^ void sb7_onMAMReceive(JNIEnv* env, jobject obj, jobject context, jobject intent)$/;"	f
+sb8	urlmon.c	/^static struct dalvik_hook_t sb8;$/;"	v	typeref:struct:dalvik_hook_t	file:
+sb9	urlmon.c	/^static struct dalvik_hook_t sb9;$/;"	v	typeref:struct:dalvik_hook_t	file:
+search_character	helpfnc.c	/^char* search_character(char* data,size_t len)$/;"	f
+search_empty_context	helper.c	/^int search_empty_context(){$/;"	f
+search_existed_context	helper.c	/^int search_existed_context(const char* hostname,int local_port)$/;"	f
+selfVerificationSpin	Globals.h	/^    volatile bool selfVerificationSpin;$/;"	m	struct:DvmJitGlobals
+server_to_client_print	helpfnc.h	22;"	d
+server_to_client_print	helpfnc.h	32;"	d
+server_to_proxy_print	helpfnc.h	80;"	d
+server_to_proxy_print	helpfnc.h	90;"	d
+set_context	helper.c	/^int set_context(const char* hostname, int local_port, int upload_model){$/;"	f
+set_context_cache	helper.c	/^void set_context_cache(const char* hostname, int local_port, struct item* it){$/;"	f
+set_context_response	helper.c	/^void set_context_response(const char* hostname, int local_port, char *response, int size,int free){$/;"	f
+set_context_unknown	helper.c	/^int set_context_unknown(const char* hostname, int local_port, int upload_model){$/;"	f
+signalCatcherHandle	Globals.h	/^    pthread_t   signalCatcherHandle;$/;"	m	struct:DvmGlobals
+signatureBreakpoint	Globals.h	/^    u4 *signatureBreakpoint;            \/\/ Signature content$/;"	m	struct:DvmJitGlobals
+signatureBreakpointSize	Globals.h	/^    u4 signatureBreakpointSize;         \/\/ # of words$/;"	m	struct:DvmJitGlobals
+size	jsmn.h	/^	int size;$/;"	m	struct:__anon2
+size	state.h	/^    char* size;$/;"	m	struct:item
+size	state.h	/^    size_t size;$/;"	m	struct:state
+stackSize	Globals.h	/^    size_t      stackSize;$/;"	m	struct:DvmGlobals
+stackTraceFile	Globals.h	/^    char*       stackTraceFile;     \/\/ for SIGQUIT-inspired output$/;"	m	struct:DvmGlobals
+start	jsmn.h	/^	int start;$/;"	m	struct:__anon2
+start_part	state.c	/^const char* start_part =$/;"	v
+stat_init	state.c	/^int stat_init()$/;"	f
+state	state.h	/^struct state{$/;"	s
+state_lock	state.c	/^void state_lock()$/;"	f
+state_unlock	state.c	/^void state_unlock()$/;"	f
+stderrPipe	Globals.h	/^    int             stderrPipe[2];$/;"	m	struct:DvmGlobals
+stdioConverterCond	Globals.h	/^    pthread_cond_t  stdioConverterCond;$/;"	m	struct:DvmGlobals
+stdioConverterHandle	Globals.h	/^    pthread_t       stdioConverterHandle;$/;"	m	struct:DvmGlobals
+stdioConverterLock	Globals.h	/^    pthread_mutex_t stdioConverterLock;$/;"	m	struct:DvmGlobals
+stdioConverterReady	Globals.h	/^    bool            stdioConverterReady;$/;"	m	struct:DvmGlobals
+stdoutPipe	Globals.h	/^    int             stdoutPipe[2];$/;"	m	struct:DvmGlobals
+stepControl	Globals.h	/^    StepControl stepControl;$/;"	m	struct:DvmGlobals
+stt_response	helper.h	/^struct stt_response{$/;"	s
+sumThreadSuspendCount	Globals.h	/^    int  sumThreadSuspendCount;$/;"	m	struct:DvmGlobals
+sync_analyze_request	helper.c	/^int sync_analyze_request(const char* buf, const char* hostname, int local_port)$/;"	f
+systemServerPid	Globals.h	/^    pid_t systemServerPid;$/;"	m	struct:DvmGlobals
+tableLock	Globals.h	/^    pthread_mutex_t tableLock;$/;"	m	struct:DvmJitGlobals
+templateSize	Globals.h	/^    unsigned int templateSize;$/;"	m	struct:DvmJitGlobals
+threadIdMap	Globals.h	/^    BitVector*  threadIdMap;$/;"	m	struct:DvmGlobals
+threadList	Globals.h	/^    Thread*     threadList;$/;"	m	struct:DvmGlobals
+threadListLock	Globals.h	/^    pthread_mutex_t threadListLock;$/;"	m	struct:DvmGlobals
+threadSleepMon	Globals.h	/^    Monitor*    threadSleepMon;$/;"	m	struct:DvmGlobals
+threadStartCond	Globals.h	/^    pthread_cond_t threadStartCond;$/;"	m	struct:DvmGlobals
+threadSuspendCountCond	Globals.h	/^    pthread_cond_t  threadSuspendCountCond;$/;"	m	struct:DvmGlobals
+threadSuspendCountLock	Globals.h	/^    pthread_mutex_t threadSuspendCountLock;$/;"	m	struct:DvmGlobals
+threshold	Globals.h	/^    unsigned short threshold;$/;"	m	struct:DvmJitGlobals
+time_milli	urlmon.c	/^double time_milli()$/;"	f
+toknext	jsmn.h	/^	unsigned int toknext; \/* next token to allocate *\/$/;"	m	struct:__anon3
+toksuper	jsmn.h	/^	int toksuper; \/* superior token node, e.g parent object or array *\/$/;"	m	struct:__anon3
+translationChains	Globals.h	/^    int                translationChains;$/;"	m	struct:DvmJitGlobals
+type	jsmn.h	/^	jsmntype_t type;$/;"	m	struct:__anon2
+type	state.h	/^    file_type type;$/;"	m	struct:item
+typeBoolean	Globals.h	/^    ClassObject* typeBoolean;$/;"	m	struct:DvmGlobals
+typeByte	Globals.h	/^    ClassObject* typeByte;$/;"	m	struct:DvmGlobals
+typeChar	Globals.h	/^    ClassObject* typeChar;$/;"	m	struct:DvmGlobals
+typeDouble	Globals.h	/^    ClassObject* typeDouble;$/;"	m	struct:DvmGlobals
+typeFloat	Globals.h	/^    ClassObject* typeFloat;$/;"	m	struct:DvmGlobals
+typeInt	Globals.h	/^    ClassObject* typeInt;$/;"	m	struct:DvmGlobals
+typeLong	Globals.h	/^    ClassObject* typeLong;$/;"	m	struct:DvmGlobals
+typeShort	Globals.h	/^    ClassObject* typeShort;$/;"	m	struct:DvmGlobals
+typeVoid	Globals.h	/^    ClassObject* typeVoid;$/;"	m	struct:DvmGlobals
+update_item	state.c	/^struct item* update_item(char* file_id, char* file_name, char* modified_time, char* size,$/;"	f
+uploadID_Sample	format.h	/^    const char* uploadID_Sample = "AEnB2Up2ao2-uhfOFLDeVXUlyehoncRb9TRRmbyDtF5nCEEJsU56Iv1-Y3tu8KMpYBSgc8bAg-YliLWB_4444vvMYYbbow7O7w";$/;"	v
+upload_model	helper.h	/^    int upload_model;$/;"	m	struct:context
+usage	run.sh	/^function usage(){$/;"	f
+useCheckJni	Globals.h	/^    bool useCheckJni;$/;"	m	struct:DvmJniGlobals
+used	helper.h	/^    int used;$/;"	m	struct:context
+userDexFiles	Globals.h	/^    HashTable*  userDexFiles;$/;"	m	struct:DvmGlobals
+verboseClass	Globals.h	/^    bool        verboseClass;$/;"	m	struct:DvmGlobals
+verboseGc	Globals.h	/^    bool        verboseGc;$/;"	m	struct:DvmGlobals
+verboseJni	Globals.h	/^    bool        verboseJni;$/;"	m	struct:DvmGlobals
+verboseShutdown	Globals.h	/^    bool        verboseShutdown;$/;"	m	struct:DvmGlobals
+verifierStats	Globals.h	/^    VerifierStats verifierStats;$/;"	m	struct:DvmGlobals
+verifyCardTable	Globals.h	/^    bool        verifyCardTable;$/;"	m	struct:DvmGlobals
+verifyDexChecksum	Globals.h	/^    bool        verifyDexChecksum;$/;"	m	struct:DvmGlobals
+vfprintfHook	Globals.h	/^    int         (*vfprintfHook)(FILE*, const char*, va_list);$/;"	m	struct:DvmGlobals
+vmExitCond	Globals.h	/^    pthread_cond_t  vmExitCond;$/;"	m	struct:DvmGlobals
+voffJavaLangClassLoader_loadClass	Globals.h	/^    int         voffJavaLangClassLoader_loadClass;$/;"	m	struct:DvmGlobals
+voffJavaLangObject_equals	Globals.h	/^    int         voffJavaLangObject_equals;$/;"	m	struct:DvmGlobals
+voffJavaLangObject_hashCode	Globals.h	/^    int         voffJavaLangObject_hashCode;$/;"	m	struct:DvmGlobals
+voffJavaLangObject_toString	Globals.h	/^    int         voffJavaLangObject_toString;$/;"	m	struct:DvmGlobals
+voffJavaLangThreadGroup_removeThread	Globals.h	/^    int         voffJavaLangThreadGroup_removeThread;$/;"	m	struct:DvmGlobals
+voffJavaLangThread_run	Globals.h	/^    int         voffJavaLangThread_run;$/;"	m	struct:DvmGlobals
+warnOnly	Globals.h	/^    bool warnOnly;$/;"	m	struct:DvmJniGlobals
+workAroundAppJniBugs	Globals.h	/^    bool workAroundAppJniBugs;$/;"	m	struct:DvmJniGlobals
+zygote	Globals.h	/^    bool        zygote;$/;"	m	struct:DvmGlobals
